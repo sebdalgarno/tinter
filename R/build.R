@@ -1,0 +1,6 @@
+devtools::test()
+devtools::document()
+# knitr::knit("README.Rmd")
+if(file.exists("DESCRIPTION")) unlink("docs", recursive = TRUE)
+pkgdown::build_site()
+devtools::check()
