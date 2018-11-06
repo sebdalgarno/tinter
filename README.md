@@ -15,7 +15,7 @@
 
 `tinter` is a simple package that solves a simple problem.
 
-From a single colour:
+From a single colour…
 
 ``` r
 library(tinter)
@@ -24,7 +24,7 @@ hex <- "#1381c2"
 
 ![](man/figures/README-unnamed-chunk-1-1.png)<!-- -->
 
-Create a monochromatic palette extending *in both directions*.
+create a monochromatic palette *in both directions*…
 
 ``` r
 tinter(hex)
@@ -34,7 +34,7 @@ tinter(hex)
 
 ![](man/figures/README-tinter-1.png)<!-- -->
 
-Or just one direction.
+or just one direction.
 
 ``` r
 tinter(hex, direction = "shades")
@@ -56,7 +56,7 @@ tinter(hex, steps = 10)
 
 ![](man/figures/README-steps-1.png)<!-- -->
 
-Adjust the number of colours cropped from extreme ends of palette.
+Adjust number of colours cropped from palette extremes.
 
 ``` r
 tinter(hex, steps = 10, crop = 7)

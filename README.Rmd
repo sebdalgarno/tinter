@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 `tinter` is a simple package that solves a simple problem. 
 
-From a single colour:
+From a single colour...
 
 ```{r colour}
 library(tinter)
@@ -34,7 +34,7 @@ hex <- "#1381c2"
 tinter:::tinter_plot(hex)
 ```
 
-Create a monochromatic palette extending *in both directions*.
+create a monochromatic palette *in both directions*...
 
 ```{r}
 tinter(hex)
@@ -44,7 +44,7 @@ tinter(hex)
 tinter:::tinter_plot(tinter(hex))
 ```
 
-Or just one direction.
+or just one direction.
 
 ```{r shades, results="hide"}
 tinter(hex, direction = "shades")
@@ -74,7 +74,7 @@ tinter(hex, steps = 10)
 tinter:::tinter_plot(tinter(hex, steps = 10))
 ```
 
-Adjust the number of colours cropped from extreme ends of palette.
+Adjust number of colours cropped from palette extremes.
 
 ```{r, results="hide"}
 tinter(hex, steps = 10, crop = 7)
