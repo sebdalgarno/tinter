@@ -64,19 +64,13 @@ tinter(hex, steps = 10, crop = 7)
 
 ![](man/figures/README-crop-1.png)<!-- -->
 
-Use tinter to create a palette for a choropleth map.
+Create palette for a choropleth
+map.
 
 ``` r
-ggplot2::ggplot() +
-  ggplot2::geom_sf(data = sf::st_read(system.file(package = "sf", "shape/nc.shp")), ggplot2::aes(fill = AREA)) +
+ggplot2::ggplot(data = sf::st_read(system.file(package = "sf", "shape/nc.shp"))) +
+  ggplot2::geom_sf(ggplot2::aes(fill = AREA), colour = "black", lwd = 0.01) +
   ggplot2::scale_fill_gradientn(colours = tinter(hex))
-#> Reading layer `nc' from data source `/Library/Frameworks/R.framework/Versions/3.5/Resources/library/sf/shape/nc.shp' using driver `ESRI Shapefile'
-#> Simple feature collection with 100 features and 14 fields
-#> geometry type:  MULTIPOLYGON
-#> dimension:      XY
-#> bbox:           xmin: -84.32385 ymin: 33.88199 xmax: -75.45698 ymax: 36.58965
-#> epsg (SRID):    4267
-#> proj4string:    +proj=longlat +datum=NAD27 +no_defs
 ```
 
 ![](man/figures/README-plot-1.png)<!-- -->
