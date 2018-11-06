@@ -8,3 +8,5 @@
 ^\.Rproj\.user$
 
 ^build\.R$
+^hex\.R$
+^docs$

@@ -1,15 +1,21 @@
 Package: tinter
-Title: What the Package Does (One Line, Title Case)
+Title: Generate a palette of tints, shades or both from a single colour
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Seb",
+           family = "Dalgarno",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
-License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
+           email = "seb@poissonconsulting.ca")
+Description: Generate a palette of tints, shades or both from a single colour.
+URL: https://github.com/sebdalgarno/tinter
+BugReports: https://github.com/sebdalgarno/tinter/issues
+Imports: 
+    checkr
 Suggests: 
     covr,
     testthat
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+Language: en-US

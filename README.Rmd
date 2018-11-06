@@ -9,20 +9,87 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  fig.width=2, fig.height=1
 )
 ```
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Travis build status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/sebdalgarno/tinter)
- [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/sebdalgarno/tinter)
- [![Coverage status](https://codecov.io/gh/sebdalgarno/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/sebdalgarno/tinter?branch=master)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-# tinter
-This is 'tinter', not the popular dating app 'tinder' - but if you are searching for that special package to generate shades and tints, look no further.
+# tinter <img src="man/figures/logo.png" align="right" width='15%'/>
 
-This simple package solves a simple problem. Provided a single colour, how does one generate a gradient of shades and tints in both directions.
+<!-- [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) -->
+<!-- [![Travis build status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/sebdalgarno/tinter) -->
+<!--  [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/sebdalgarno/tinter) -->
+<!--  [![Coverage status](https://codecov.io/gh/sebdalgarno/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/sebdalgarno/tinter?branch=master) -->
+<!-- [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) -->
 
-It uses base package grDevices and works nicely with magrittr package for pipes.
+`tinter` is a simple package that solves a simple problem. 
 
-Please note that the 'tinter' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+From a single colour:
+
+```{r colour}
+library(tinter)
+hex <- "#1381c2"
+```
+
+```{r, echo = FALSE}
+tinter:::tinter_plot(hex)
+```
+
+Create a monochromatic palette extending *in both directions*.
+
+```{r}
+tinter(hex)
+```
+
+```{r tinter, echo=FALSE}
+tinter:::tinter_plot(tinter(hex))
+```
+
+Or just one direction.
+
+```{r shades, results="hide"}
+tinter(hex, direction = "shades")
+```
+
+```{r, echo=FALSE}
+tinter:::tinter_plot(tinter(hex, direction = "shades"))
+
+```
+
+```{r tints, results="hide"}
+tinter(hex, direction = "tints")
+```
+
+```{r, echo=FALSE}
+tinter:::tinter_plot(tinter(hex, direction = "tints"))
+
+```
+
+Adjust number of colours in output.
+
+```{r, results="hide"}
+tinter(hex, steps = 10)
+```
+
+```{r steps, echo=FALSE}
+tinter:::tinter_plot(tinter(hex, steps = 10))
+```
+
+Adjust the number of colours cropped from extreme ends of palette.
+
+```{r, results="hide"}
+tinter(hex, steps = 10, crop = 7)
+```
+
+```{r crop, echo=FALSE}
+tinter:::tinter_plot(tinter(hex, steps = 10, crop = 7))
+```
+
+Use tinter to create a palette for a choropleth map.
+
+```{r plot, fig.height = 4, fig.width = 8}
+ggplot2::ggplot() +
+  ggplot2::geom_sf(data = sf::st_read(system.file(package = "sf", "shape/nc.shp")), ggplot2::aes(fill = AREA)) +
+  ggplot2::scale_fill_gradientn(colours = tinter(hex))
+```
+
+Please note that the `tinter` project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
