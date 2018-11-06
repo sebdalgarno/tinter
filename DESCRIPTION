@@ -1,6 +1,6 @@
 Package: tinter
 Title: Generate a Monochromatic Palette
-Version: 0.0.0.9002
+Version: 0.0.0.9003
 Authors@R: c(
     person("Sebastian", "Dalgarno", role = c("aut", "cre"), email = "seb@poissonconsulting.ca"),
     person("Joe", "Thorley", role = "ctb", email = "joe@poissonconsulting.ca", comment = c(ORCID = "0000-0002-7683-4592")))
@@ -8,7 +8,9 @@ Description: Generate a palette of tints, shades or both from a single colour.
 URL: https://github.com/poissonconsulting/tinter
 BugReports: https://github.com/poissonconsulting/tinter/issues
 Imports: 
-    checkr
+    checkr,
+    grDevices,
+    graphics
 Suggests: 
     covr,
     testthat

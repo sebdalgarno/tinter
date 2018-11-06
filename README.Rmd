@@ -15,11 +15,11 @@ knitr::opts_chunk$set(
 
 # tinter <img src="man/figures/logo.png" align="right" width='15%'/>
 
-<!-- [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) -->
-<!-- [![Travis build status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/sebdalgarno/tinter) -->
-<!--  [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/sebdalgarno/tinter) -->
-<!--  [![Coverage status](https://codecov.io/gh/sebdalgarno/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/sebdalgarno/tinter?branch=master) -->
-<!-- [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) -->
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/sebdalgarno/tinter)
+ [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/sebdalgarno/tinter)
+ [![Coverage status](https://codecov.io/gh/sebdalgarno/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/sebdalgarno/tinter?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 `tinter` is a simple package that solves a simple problem. 
 
@@ -31,7 +31,26 @@ hex <- "#1381c2"
 ```
 
 ```{r colour, echo = FALSE}
-tinter:::tinter_plot(hex)
+tinter_plot <- function(x){
+  grid <- c(length(x), 1)
+  width <- 0.9/(max(grid) + 1)
+  gap <- 1/(max(grid) + 1)
+  centres <- lapply(grid, function(i) gap * ((max(grid) -
+                                                i)/2 + seq_len(i)))
+  centres <- as.matrix(expand.grid(centres))
+  oldPars <- graphics::par(mai = c(0, 0, 0, 0), bg = "white")
+  on.exit(graphics::par(oldPars))
+  devSize <- grDevices::dev.size()
+  devRatio <- devSize[2]/devSize[1]
+  graphics::plot(NA, NA, xlim = c(-0.1, 1.1), ylim = 0.5 + c(-1, 1) *
+         devRatio * 0.6, xlab = "", ylab = "", xaxt = "n", yaxt = "n",
+       bty = "n", asp = 1)
+  graphics::rect(centres[, 1] - width/2, rev(centres[, 2]) - width/2,
+       centres[, 1] + width/2, rev(centres[, 2]) + width/2,
+       col = x, border = "black", lwd = 0.2)
+}
+
+tinter_plot(hex)
 ```
 
 create a monochromatic palette *in both directions*...
@@ -41,7 +60,7 @@ tinter(hex)
 ```
 
 ```{r tinter, echo=FALSE}
-tinter:::tinter_plot(tinter(hex))
+tinter_plot(tinter(hex))
 ```
 
 or just one direction.
@@ -51,7 +70,7 @@ tinter(hex, direction = "shades")
 ```
 
 ```{r shades, echo=FALSE}
-tinter:::tinter_plot(tinter(hex, direction = "shades"))
+tinter_plot(tinter(hex, direction = "shades"))
 
 ```
 
@@ -60,7 +79,7 @@ tinter(hex, direction = "tints")
 ```
 
 ```{r tints, echo=FALSE}
-tinter:::tinter_plot(tinter(hex, direction = "tints"))
+tinter_plot(tinter(hex, direction = "tints"))
 
 ```
 
@@ -71,7 +90,7 @@ tinter(hex, steps = 10)
 ```
 
 ```{r steps, echo=FALSE}
-tinter:::tinter_plot(tinter(hex, steps = 10))
+tinter_plot(tinter(hex, steps = 10))
 ```
 
 Adjust number of colours cropped from palette extremes.
@@ -81,7 +100,7 @@ tinter(hex, steps = 10, crop = 7)
 ```
 
 ```{r crop, echo=FALSE}
-tinter:::tinter_plot(tinter(hex, steps = 10, crop = 7))
+tinter_plot(tinter(hex, steps = 10, crop = 7))
 ```
 
 Create palette for a choropleth map.

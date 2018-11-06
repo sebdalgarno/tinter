@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">tinter</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9002</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9003</span>
       </span>
     </div>
 
@@ -71,7 +71,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="tinter" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#tinter" class="anchor"></a>tinter <img src="reference/figures/logo.png" align="right" width="15%">
+<a href="#tinter" class="anchor"></a>tinter <img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/logo.png" align="right" width="15%">
 </h1></div>
 <!-- [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) -->
 <!-- [![Travis build status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/sebdalgarno/tinter) -->
@@ -82,28 +82,28 @@
 <p>From a single colour…</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tinter)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">hex &lt;-<span class="st"> "#1381c2"</span></a></code></pre></div>
-<p><img src="reference/figures/README-colour-1.png" width="192"></p>
+<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-colour-1.png" width="192"></p>
 <p>create a monochromatic palette <em>in both directions</em>…</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt; [1] "#CFE5F2" "#A0CCE6" "#71B3DA" "#429ACE" "#1381C2" "#0F679B" "#0B4D74"</span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; [8] "#07334D" "#031926"</span></a></code></pre></div>
-<p><img src="reference/figures/README-tinter-1.png" width="192"></p>
+<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-tinter-1.png" width="192"></p>
 <p>or just one direction.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">direction =</span> <span class="st">"shades"</span>)</a></code></pre></div>
-<p><img src="reference/figures/README-shades-1.png" width="192"></p>
+<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-shades-1.png" width="192"></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">direction =</span> <span class="st">"tints"</span>)</a></code></pre></div>
-<p><img src="reference/figures/README-tints-1.png" width="192"></p>
+<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-tints-1.png" width="192"></p>
 <p>Adjust number of colours in output.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">steps =</span> <span class="dv">10</span>)</a></code></pre></div>
-<p><img src="reference/figures/README-steps-1.png" width="192"></p>
+<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-steps-1.png" width="192"></p>
 <p>Adjust number of colours cropped from palette extremes.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">steps =</span> <span class="dv">10</span>, <span class="dt">crop =</span> <span class="dv">7</span>)</a></code></pre></div>
-<p><img src="reference/figures/README-crop-1.png" width="192"></p>
+<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-crop-1.png" width="192"></p>
 <p>Create palette for a choropleth map.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">ggplot2<span class="op">::</span><span class="kw"><a href="ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data =</span> sf<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/sf/topics/st_read">st_read</a></span>(<span class="kw">system.file</span>(<span class="dt">package =</span> <span class="st">"sf"</span>, <span class="st">"shape/nc.shp"</span>))) <span class="op">+</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(ggplot2<span class="op">::</span><span class="kw"><a href="ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> AREA), <span class="dt">colour =</span> <span class="st">"black"</span>, <span class="dt">lwd =</span> <span class="fl">0.01</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex))</a></code></pre></div>
-<p><img src="reference/figures/README-plot-1.png" width="768"></p>
+<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-plot-1.png" width="768"></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>

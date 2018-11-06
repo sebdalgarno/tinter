@@ -3,15 +3,15 @@
 
 # tinter <img src="man/figures/logo.png" align="right" width='15%'/>
 
-<!-- [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental) -->
-
-<!-- [![Travis build status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/sebdalgarno/tinter) -->
-
-<!--  [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/sebdalgarno/tinter) -->
-
-<!--  [![Coverage status](https://codecov.io/gh/sebdalgarno/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/sebdalgarno/tinter?branch=master) -->
-
-<!-- [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) -->
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/sebdalgarno/tinter)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/sebdalgarno/tinter)
+[![Coverage
+status](https://codecov.io/gh/sebdalgarno/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/sebdalgarno/tinter?branch=master)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 `tinter` is a simple package that solves a simple problem.
 
