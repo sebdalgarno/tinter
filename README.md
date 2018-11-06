@@ -3,13 +3,13 @@
 
 # tinter <img src="man/figures/logo.png" align="right" width='15%'/>
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
-status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/poissonconsulting/tinter)
+status](https://travis-ci.org/poissonconsulting/tinter.svg?branch=master)](https://travis-ci.org/poissonconsulting/tinter)
 [![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/tinter)
+status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/tinter)
 [![Coverage
-status](https://codecov.io/gh/sebdalgarno/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/tinter?branch=master)
+status](https://codecov.io/gh/poissonconsulting/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/tinter?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
