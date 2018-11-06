@@ -11,9 +11,9 @@
 tinter <- function(x, steps = 5, crop = 1, direction = "both"){
 
   check_colour(x)
-  check_steps(steps)
-  check_crop(crop)
-  check_direction(direction)
+  steps <- check_noneg_int(steps, coerce = TRUE)
+  crop <- check_noneg_int(crop, coerce = TRUE)
+  check_vector(direction, values = c("shades", "tints", "both"))
 
   if(crop > steps)
     stop("crop cannot be greater than steps.", call. = FALSE)

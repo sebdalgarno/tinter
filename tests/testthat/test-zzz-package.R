@@ -1,7 +1,6 @@
 context("tinter")
 
 test_that("package", {
-
   expect_length(tinter("blue", 10, 1), 19)
   expect_length(tinter("blue", 10, 1, "shades"), 10)
   expect_length(tinter("blue", 10, 1, "tints"), 10)
@@ -14,5 +13,4 @@ test_that("package", {
   expect_true("#000000" %in% tinter("#1381c2", crop = 0))
 
   expect_is(tinter("blue"), "character")
-
 })

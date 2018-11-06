@@ -14,28 +14,10 @@ tint <- function(x, steps, crop){
   tint[-(seq_len(crop))]
 }
 
-check_steps <- function(x){
-  attributes(x) <- NULL
-  if (is.double(x) && identical(as.double(as.integer(x)), x))
-    x <- as.integer(x)
-  checkr::check_scalar(x, values = c(0L, checkr::chk_max_int()), x_name = "steps")
-}
-
-check_crop <- function(x){
-  attributes(x) <- NULL
-  if (is.double(x) && identical(as.double(as.integer(x)), x))
-    x <- as.integer(x)
-  checkr::check_scalar(x, values = c(0L, checkr::chk_max_int()), x_name = "crop")
-}
-
 check_colour <- function(x){
   res <- try(grDevices::col2rgb(x),silent = TRUE)
   if(class(res) == "try-error")
     stop(x, " is not a valid color", call. = FALSE)
-}
-
-check_direction <- function(x){
-  checkr::check_vector(x, values = c("shades", "tints", "both"), x_name = "direction")
 }
 
 tinter_plot <- function(x){
@@ -56,7 +38,3 @@ tinter_plot <- function(x){
        centres[, 1] + width/2, rev(centres[, 2]) + width/2,
        col = x, border = "black", lwd = 0.2)
 }
-
-
-
-

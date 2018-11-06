@@ -1,3 +1,4 @@
+^_pkgdown\.yml$
 ^CODE_OF_CONDUCT\.md$
 ^appveyor\.yml$
 ^codecov\.yml$
