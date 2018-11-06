@@ -22,7 +22,7 @@ library(tinter)
 hex <- "#1381c2"
 ```
 
-![](man/figures/README-unnamed-chunk-1-1.png)<!-- -->
+![](man/figures/README-colour-1.png)<!-- -->
 
 create a monochromatic palette *in both directions*…
 
@@ -40,13 +40,13 @@ or just one direction.
 tinter(hex, direction = "shades")
 ```
 
-![](man/figures/README-unnamed-chunk-3-1.png)<!-- -->
+![](man/figures/README-shades-1.png)<!-- -->
 
 ``` r
 tinter(hex, direction = "tints")
 ```
 
-![](man/figures/README-unnamed-chunk-4-1.png)<!-- -->
+![](man/figures/README-tints-1.png)<!-- -->
 
 Adjust number of colours in output.
 

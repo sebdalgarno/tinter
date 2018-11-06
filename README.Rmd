@@ -25,12 +25,12 @@ knitr::opts_chunk$set(
 
 From a single colour...
 
-```{r colour}
+```{r global}
 library(tinter)
 hex <- "#1381c2"
 ```
 
-```{r, echo = FALSE}
+```{r colour, echo = FALSE}
 tinter:::tinter_plot(hex)
 ```
 
@@ -46,20 +46,20 @@ tinter:::tinter_plot(tinter(hex))
 
 or just one direction.
 
-```{r shades, results="hide"}
+```{r, results="hide"}
 tinter(hex, direction = "shades")
 ```
 
-```{r, echo=FALSE}
+```{r shades, echo=FALSE}
 tinter:::tinter_plot(tinter(hex, direction = "shades"))
 
 ```
 
-```{r tints, results="hide"}
+```{r, results="hide"}
 tinter(hex, direction = "tints")
 ```
 
-```{r, echo=FALSE}
+```{r tints, echo=FALSE}
 tinter:::tinter_plot(tinter(hex, direction = "tints"))
 
 ```
