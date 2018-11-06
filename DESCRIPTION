@@ -9,9 +9,9 @@ URL: https://github.com/poissonconsulting/tinter
 BugReports: https://github.com/poissonconsulting/tinter/issues
 Imports: 
     checkr,
-    grDevices,
-    graphics
+    grDevices
 Suggests: 
+    graphics,
     covr,
     testthat
 License: MIT + file LICENSE

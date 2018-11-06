@@ -5,11 +5,11 @@
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
-status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/sebdalgarno/tinter)
+status](https://travis-ci.org/sebdalgarno/tinter.svg?branch=master)](https://travis-ci.org/poissonconsulting/tinter)
 [![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/sebdalgarno/tinter)
+status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/tinter)
 [![Coverage
-status](https://codecov.io/gh/sebdalgarno/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/sebdalgarno/tinter?branch=master)
+status](https://codecov.io/gh/sebdalgarno/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/tinter?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
