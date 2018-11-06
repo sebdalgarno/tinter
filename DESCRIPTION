@@ -1,5 +1,5 @@
 Package: tinter
-Title: Generate a palette of tints, shades or both from a single colour
+Title: Generate a Monochromatic Palette
 Version: 0.0.0.9000
 Authors@R: c(
     person("Sebastian", "Dalgarno", role = c("aut", "cre"), email = "seb@poissonconsulting.ca"),

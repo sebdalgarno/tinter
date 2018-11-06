@@ -92,4 +92,28 @@ ggplot2::ggplot(data = sf::st_read(system.file(package = "sf", "shape/nc.shp")))
   ggplot2::scale_fill_gradientn(colours = tinter(hex))
 ```
 
-Please note that the `tinter` project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+## Installation
+
+To install the latest development version from [GitHub](https://github.com/poissonconsulting/tinter)
+```
+install.packages("devtools")
+devtools::install_github("poissonconsulting/err")
+devtools::install_github("poissonconsulting/checkr")
+devtools::install_github("poissonconsulting/tinter")
+```
+
+To install the latest development version from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
+```
+install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("tinter")
+```
+
+## Contribution
+
+Please report any [issues](https://github.com/poissonconsulting/tinter/issues).
+
+[Pull requests](https://github.com/poissonconsulting/tinter/pulls) are always welcome.
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). 
+By participating in this project you agree to abide by its terms.
