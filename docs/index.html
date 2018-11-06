@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Generate a palette of tints, shades or both from a single colour • tinter</title>
+<title>Generate a Monochromatic Palette • tinter</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Generate a palette of tints, shades or both from a single colour">
+<script src="pkgdown.js"></script><meta property="og:title" content="Generate a Monochromatic Palette">
 <meta property="og:description" content="Generate a palette of tints, shades or both from a single colour.">
 <meta property="og:image" content="/logo.png">
 <meta name="twitter:card" content="summary">
@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">tinter</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9000</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9002</span>
       </span>
     </div>
 
@@ -48,7 +48,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/sebdalgarno/tinter">
+  <a href="https://github.com/poissonconsulting/tinter">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -104,7 +104,26 @@
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(ggplot2<span class="op">::</span><span class="kw"><a href="ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> AREA), <span class="dt">colour =</span> <span class="st">"black"</span>, <span class="dt">lwd =</span> <span class="fl">0.01</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw"><a href="ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex))</a></code></pre></div>
 <p><img src="reference/figures/README-plot-1.png" width="768"></p>
-<p>Please note that the <code>tinter</code> project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>To install the latest development version from <a href="https://github.com/poissonconsulting/tinter">GitHub</a></p>
+<pre><code>install.packages("devtools")
+devtools::install_github("poissonconsulting/err")
+devtools::install_github("poissonconsulting/checkr")
+devtools::install_github("poissonconsulting/tinter")</code></pre>
+<p>To install the latest development version from the Poisson drat <a href="https://github.com/poissonconsulting/drat">repository</a></p>
+<pre><code>install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("tinter")</code></pre>
+</div>
+<div id="contribution" class="section level2">
+<h2 class="hasAnchor">
+<a href="#contribution" class="anchor"></a>Contribution</h2>
+<p>Please report any <a href="https://github.com/poissonconsulting/tinter/issues">issues</a>.</p>
+<p><a href="https://github.com/poissonconsulting/tinter/pulls">Pull requests</a> are always welcome.</p>
+<p>Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms</p>
+</div>
 </div>
   </div>
 
@@ -112,9 +131,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/sebdalgarno/tinter">https://​github.com/​sebdalgarno/​tinter</a>
+<li>Browse source code at <br><a href="https://github.com/poissonconsulting/tinter">https://​github.com/​poissonconsulting/​tinter</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/sebdalgarno/tinter/issues">https://​github.com/​sebdalgarno/​tinter/​issues</a>
+<li>Report a bug at <br><a href="https://github.com/poissonconsulting/tinter/issues">https://​github.com/​poissonconsulting/​tinter/​issues</a>
 </li>
 </ul>
 </div>
@@ -128,7 +147,8 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Seb Dalgarno <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Sebastian Dalgarno <br><small class="roles"> Author, maintainer </small>  </li>
+<li><a href="authors.html">All authors...</a></li>
 </ul>
 </div>
 
@@ -138,7 +158,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Seb Dalgarno.</p>
+  <p>Developed by Sebastian Dalgarno.</p>
 </div>
 
 <div class="pkgdown">
