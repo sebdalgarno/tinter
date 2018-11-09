@@ -27,7 +27,8 @@ From a single colour...
 
 ```{r global}
 library(tinter)
-hex <- "#1381c2"
+
+hex <- "#ed0a4f"
 ```
 
 ```{r colour, echo = FALSE}
@@ -47,7 +48,7 @@ tinter_plot <- function(x){
        bty = "n", asp = 1)
   graphics::rect(centres[, 1] - width/2, rev(centres[, 2]) - width/2,
        centres[, 1] + width/2, rev(centres[, 2]) + width/2,
-       col = x, border = "black", lwd = 0.2)
+       col = x, border = "white", lwd = 0.2)
 }
 
 tinter_plot(hex)
@@ -106,9 +107,17 @@ tinter_plot(tinter(hex, steps = 10, crop = 7))
 Create palette for a choropleth map.
 
 ```{r plot, fig.height = 4, fig.width = 8, message=FALSE, warning=FALSE, results="hide"}
-ggplot2::ggplot(data = sf::st_read(system.file(package = "sf", "shape/nc.shp"))) +
-  ggplot2::geom_sf(ggplot2::aes(fill = AREA), colour = "black", lwd = 0.01) +
-  ggplot2::scale_fill_gradientn(colours = tinter(hex))
+library(ggplot2)
+library(sf)
+
+nc <- st_read(system.file(package = "sf", "shape/nc.shp"))
+
+ggplot(data = nc) +
+  geom_sf(aes(fill = AREA), colour = "white", lwd = 0.05) +
+  # colours from tinter
+  scale_fill_gradientn(colours = tinter(hex)) +
+  theme_void() +
+  coord_sf(datum = NA)
 ```
 
 ## Installation

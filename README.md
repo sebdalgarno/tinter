@@ -19,7 +19,8 @@ From a single colour…
 
 ``` r
 library(tinter)
-hex <- "#1381c2"
+
+hex <- "#ed0a4f"
 ```
 
 ![](man/figures/README-colour-1.png)<!-- -->
@@ -28,8 +29,8 @@ create a monochromatic palette *in both directions*…
 
 ``` r
 tinter(hex)
-#> [1] "#CFE5F2" "#A0CCE6" "#71B3DA" "#429ACE" "#1381C2" "#0F679B" "#0B4D74"
-#> [8] "#07334D" "#031926"
+#> [1] "#FBCEDB" "#F79DB8" "#F46C95" "#F03B72" "#ED0A4F" "#BD083F" "#8E062F"
+#> [8] "#5E031F" "#2F020F"
 ```
 
 ![](man/figures/README-tinter-1.png)<!-- -->
@@ -64,13 +65,20 @@ tinter(hex, steps = 10, crop = 7)
 
 ![](man/figures/README-crop-1.png)<!-- -->
 
-Create palette for a choropleth
-map.
+Create palette for a choropleth map.
 
 ``` r
-ggplot2::ggplot(data = sf::st_read(system.file(package = "sf", "shape/nc.shp"))) +
-  ggplot2::geom_sf(ggplot2::aes(fill = AREA), colour = "black", lwd = 0.01) +
-  ggplot2::scale_fill_gradientn(colours = tinter(hex))
+library(ggplot2)
+library(sf)
+
+nc <- st_read(system.file(package = "sf", "shape/nc.shp"))
+
+ggplot(data = nc) +
+  geom_sf(aes(fill = AREA), colour = "white", lwd = 0.05) +
+  # colours from tinter
+  scale_fill_gradientn(colours = tinter(hex)) +
+  theme_void() +
+  coord_sf(datum = NA)
 ```
 
 ![](man/figures/README-plot-1.png)<!-- -->
