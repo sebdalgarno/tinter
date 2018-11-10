@@ -13,19 +13,24 @@ status](https://codecov.io/gh/poissonconsulting/tinter/branch/master/graph/badge
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-### What can it do?
+### Introduction
 
-`tinter` is a simple package that solves a simple problem.
+`tinter` provides a simple way to generate monochromatic palettes.
+Easily define:
 
-Turn a colour…
+  - palette direction (“shades”, “tints”, or “both”).
+  - number of colours to generate on either side (`steps`).
+  - number of colours to remove from extreme end(s) of palette
+    (e.g. default `crop = 1` eliminates black and white).
+
+<!-- end list -->
 
 ``` r
+library(tinter)
 hex <- "#ed0a4f"
 ```
 
 ![](man/figures/README-colour-1.png)<!-- -->
-
-…into a monochromatic palette **in both directions**…
 
 ``` r
 tinter(hex)
@@ -35,15 +40,11 @@ tinter(hex)
 
 ![](man/figures/README-tinter-1.png)<!-- -->
 
-… or **one direction**.
-
 ``` r
 tinter(hex, direction = "tints")
 ```
 
 ![](man/figures/README-tints-1.png)<!-- -->
-
-Adjust number of colours in output…
 
 ``` r
 tinter(hex, steps = 10)
@@ -51,26 +52,13 @@ tinter(hex, steps = 10)
 
 ![](man/figures/README-steps-1.png)<!-- -->
 
-…and cropped from palette extremes.
-
 ``` r
 tinter(hex, steps = 10, crop = 7)
 ```
 
 ![](man/figures/README-crop-1.png)<!-- -->
 
-**A couple of notes:**
-
-1.  The default is for black and white to be removed from the palette
-    (e.g. `crop = 1`).
-
-2.  The `steps` argument indicates how many colours to add *on either
-    side* (e.g. `steps = 5` results in 11 colurs when `direction =
-    "both"` and 6 colours when `direction = "shades"`).
-
-### How is it used in the wild?
-
-Create palette for a choropleth map.
+### Create a choropleth map
 
 ``` r
 library(ggplot2)
@@ -88,7 +76,7 @@ ggplot(data = nc) +
 
 ![](man/figures/README-plot-1.png)<!-- -->
 
-### Doesn’t this exist already?
+### Doesn’t this already exist?
 
 `tinter` just simplifies a task usually done with `grDevices`. It’s
 default is to remove black and white from the palette.
