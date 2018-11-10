@@ -2,7 +2,7 @@
 % Please edit documentation in R/tinter.R
 \name{tinter}
 \alias{tinter}
-\title{Get tints, shades or both of a colour}
+\title{Generate shades, tints or both from a colour.}
 \usage{
 tinter(x, steps = 5, crop = 1, direction = "both")
 }
@@ -19,5 +19,5 @@ tinter(x, steps = 5, crop = 1, direction = "both")
 A vector of colours.
 }
 \description{
-Get tints, shades or both of a colour
+Generate shades, tints or both from a colour.
 }

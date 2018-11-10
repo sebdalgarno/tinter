@@ -1,4 +1,4 @@
-#' Get tints, shades or both of a colour
+#' Generate shades, tints or both from a colour.
 #'
 #' @param x A string of a colour in any format accepted by grDevices::col2rgb().
 #' @param steps An integer indicating how many shades/tints to generate (excluding x).

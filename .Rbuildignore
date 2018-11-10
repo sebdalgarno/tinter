@@ -11,3 +11,7 @@
 ^build\.R$
 ^hex\.R$
 ^docs$
+^NEWS\.md$
+^cran-comments\.md$
+
+
