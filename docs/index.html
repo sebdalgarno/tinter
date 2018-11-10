@@ -30,7 +30,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">tinter</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9003</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.1</span>
       </span>
     </div>
 
@@ -74,6 +74,9 @@
 <a href="#tinter" class="anchor"></a>tinter <img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/logo.png" align="right" width="15%">
 </h1></div>
 
+<div id="what-can-it-do" class="section level3">
+<h3 class="hasAnchor">
+<a href="#what-can-it-do" class="anchor"></a>What can it do?</h3>
 <p><code>tinter</code> is a simple package that solves a simple problem.</p>
 <p>From a single colour…</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(tinter)</a>
@@ -96,6 +99,10 @@
 <p>Adjust number of colours cropped from palette extremes.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">steps =</span> <span class="dv">10</span>, <span class="dt">crop =</span> <span class="dv">7</span>)</a></code></pre></div>
 <p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-crop-1.png" width="192"></p>
+</div>
+<div id="how-is-it-used-in-the-wild" class="section level3">
+<h3 class="hasAnchor">
+<a href="#how-is-it-used-in-the-wild" class="anchor"></a>How is it used in the wild?</h3>
 <p>Create palette for a choropleth map.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">library</span>(ggplot2)</a>
 <a class="sourceLine" id="cb7-2" title="2"><span class="kw">library</span>(sf)</a>
@@ -109,6 +116,35 @@
 <a class="sourceLine" id="cb7-10" title="10"><span class="st">  </span><span class="kw"><a href="ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb7-11" title="11"><span class="st">  </span><span class="kw"><a href="ggplot2.tidyverse.org/reference/ggsf.html">coord_sf</a></span>(<span class="dt">datum =</span> <span class="ot">NA</span>)</a></code></pre></div>
 <p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-plot-1.png" width="768"></p>
+</div>
+<div id="doesnt-this-exist-already" class="section level3">
+<h3 class="hasAnchor">
+<a href="#doesnt-this-exist-already" class="anchor"></a>Doesn’t this exist already?</h3>
+<p><code>tinter</code> just simplifies a task usually done with <code>grDevices</code>. It’s default is to remove black and white from the palette (adjusted with <code>crop</code> argument).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>)</a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; [1] "#CCCCFF" "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099"</span></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="co">#&gt; [8] "#000065" "#000032"</span></a>
+<a class="sourceLine" id="cb8-4" title="4"></a>
+<a class="sourceLine" id="cb8-5" title="5"><span class="co">### ------ is identical to</span></a>
+<a class="sourceLine" id="cb8-6" title="6"></a>
+<a class="sourceLine" id="cb8-7" title="7">grDevices<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/grDevices/topics/colorRamp">colorRampPalette</a></span>(<span class="dt">colors =</span> <span class="kw">c</span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="dv">11</span>)[<span class="op">-</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">11</span>))]</a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="co">#&gt; [1] "#CCCCFF" "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098"</span></a>
+<a class="sourceLine" id="cb8-9" title="9"><span class="co">#&gt; [8] "#000065" "#000032"</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, <span class="dt">direction =</span> <span class="st">"shades"</span>)</a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="co">#&gt; [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"</span></a>
+<a class="sourceLine" id="cb9-3" title="3"></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="co">### --- is identical to</span></a>
+<a class="sourceLine" id="cb9-5" title="5"></a>
+<a class="sourceLine" id="cb9-6" title="6">grDevices<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/grDevices/topics/colorRamp">colorRampPalette</a></span>(<span class="dt">colors =</span> <span class="kw">c</span>(<span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="dv">6</span>)[<span class="op">-</span><span class="dv">6</span>]</a>
+<a class="sourceLine" id="cb9-7" title="7"><span class="co">#&gt; [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"</span></a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, <span class="dt">crop =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="co">#&gt; [1] "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099" "#000065"</span></a>
+<a class="sourceLine" id="cb10-3" title="3"></a>
+<a class="sourceLine" id="cb10-4" title="4"><span class="co">### --- is identical to</span></a>
+<a class="sourceLine" id="cb10-5" title="5"></a>
+<a class="sourceLine" id="cb10-6" title="6">grDevices<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/grDevices/topics/colorRamp">colorRampPalette</a></span>(<span class="dt">colors =</span> <span class="kw">c</span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="dv">11</span>)[<span class="op">-</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dv">10</span><span class="op">:</span><span class="dv">11</span>))]</a>
+<a class="sourceLine" id="cb10-7" title="7"><span class="co">#&gt; [1] "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098" "#000065"</span></a></code></pre></div>
+</div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>

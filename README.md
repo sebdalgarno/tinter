@@ -13,19 +13,19 @@ status](https://codecov.io/gh/poissonconsulting/tinter/branch/master/graph/badge
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+### What can it do?
+
 `tinter` is a simple package that solves a simple problem.
 
-From a single colour…
+Turn a colour…
 
 ``` r
-library(tinter)
-
 hex <- "#ed0a4f"
 ```
 
 ![](man/figures/README-colour-1.png)<!-- -->
 
-create a monochromatic palette *in both directions*…
+…into a monochromatic palette **in both directions**…
 
 ``` r
 tinter(hex)
@@ -35,13 +35,7 @@ tinter(hex)
 
 ![](man/figures/README-tinter-1.png)<!-- -->
 
-or just one direction.
-
-``` r
-tinter(hex, direction = "shades")
-```
-
-![](man/figures/README-shades-1.png)<!-- -->
+… or **one direction**.
 
 ``` r
 tinter(hex, direction = "tints")
@@ -49,7 +43,7 @@ tinter(hex, direction = "tints")
 
 ![](man/figures/README-tints-1.png)<!-- -->
 
-Adjust number of colours in output.
+Adjust number of colours in output…
 
 ``` r
 tinter(hex, steps = 10)
@@ -57,13 +51,24 @@ tinter(hex, steps = 10)
 
 ![](man/figures/README-steps-1.png)<!-- -->
 
-Adjust number of colours cropped from palette extremes.
+…and cropped from palette extremes.
 
 ``` r
 tinter(hex, steps = 10, crop = 7)
 ```
 
 ![](man/figures/README-crop-1.png)<!-- -->
+
+**A couple of notes:**
+
+1.  The default is for black and white to be removed from the palette
+    (e.g. `crop = 1`).
+
+2.  The `steps` argument indicates how many colours to add *on either
+    side* (e.g. `steps = 5` results in 11 colurs when `direction =
+    "both"` and 6 colours when `direction = "shades"`).
+
+### How is it used in the wild?
 
 Create palette for a choropleth map.
 
@@ -82,6 +87,43 @@ ggplot(data = nc) +
 ```
 
 ![](man/figures/README-plot-1.png)<!-- -->
+
+### Doesn’t this exist already?
+
+`tinter` just simplifies a task usually done with `grDevices`. It’s
+default is to remove black and white from the palette.
+
+``` r
+tinter("blue")
+#> [1] "#CCCCFF" "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099"
+#> [8] "#000065" "#000032"
+
+### ------ is identical to
+
+grDevices::colorRampPalette(colors = c("white", "blue", "black"))(11)[-(c(1, 11))]
+#> [1] "#CCCCFF" "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098"
+#> [8] "#000065" "#000032"
+```
+
+``` r
+tinter("blue", direction = "shades")
+#> [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"
+
+### --- is identical to
+
+grDevices::colorRampPalette(colors = c("blue", "black"))(6)[-6]
+#> [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"
+```
+
+``` r
+tinter("blue", crop = 2)
+#> [1] "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099" "#000065"
+
+### --- is identical to
+
+grDevices::colorRampPalette(colors = c("white", "blue", "black"))(11)[-(c(1:2, 10:11))]
+#> [1] "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098" "#000065"
+```
 
 ## Installation
 

@@ -21,17 +21,16 @@ knitr::opts_chunk$set(
  [![Coverage status](https://codecov.io/gh/poissonconsulting/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/tinter?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+### What can it do?
 `tinter` is a simple package that solves a simple problem. 
 
-From a single colour...
-
+Turn a colour...
 ```{r global}
-library(tinter)
-
 hex <- "#ed0a4f"
 ```
 
 ```{r colour, echo = FALSE}
+library(tinter)
 tinter_plot <- function(x){
   grid <- c(length(x), 1)
   width <- 0.9/(max(grid) + 1)
@@ -54,7 +53,7 @@ tinter_plot <- function(x){
 tinter_plot(hex)
 ```
 
-create a monochromatic palette *in both directions*...
+...into a monochromatic palette **in both directions**... 
 
 ```{r}
 tinter(hex)
@@ -64,17 +63,7 @@ tinter(hex)
 tinter_plot(tinter(hex))
 ```
 
-or just one direction.
-
-```{r, results="hide"}
-tinter(hex, direction = "shades")
-```
-
-```{r shades, echo=FALSE}
-tinter_plot(tinter(hex, direction = "shades"))
-
-```
-
+... or **one direction**.   
 ```{r, results="hide"}
 tinter(hex, direction = "tints")
 ```
@@ -84,7 +73,7 @@ tinter_plot(tinter(hex, direction = "tints"))
 
 ```
 
-Adjust number of colours in output.
+Adjust number of colours in output... 
 
 ```{r, results="hide"}
 tinter(hex, steps = 10)
@@ -94,7 +83,7 @@ tinter(hex, steps = 10)
 tinter_plot(tinter(hex, steps = 10))
 ```
 
-Adjust number of colours cropped from palette extremes.
+...and cropped from palette extremes.  
 
 ```{r, results="hide"}
 tinter(hex, steps = 10, crop = 7)
@@ -104,6 +93,14 @@ tinter(hex, steps = 10, crop = 7)
 tinter_plot(tinter(hex, steps = 10, crop = 7))
 ```
 
+ **A couple of notes:**  
+ 
+ 1. The default is for black and white to be removed from the palette (e.g. `crop = 1`). 
+ 
+ 2. The `steps` argument indicates how many colours to add *on either side* (e.g. `steps = 5` results in 11 colurs when `direction = "both"` and 6 colours when `direction = "shades"`). 
+ 
+
+### How is it used in the wild?
 Create palette for a choropleth map.
 
 ```{r plot, fig.height = 4, fig.width = 8, message=FALSE, warning=FALSE, results="hide"}
@@ -118,6 +115,34 @@ ggplot(data = nc) +
   scale_fill_gradientn(colours = tinter(hex)) +
   theme_void() +
   coord_sf(datum = NA)
+```
+
+### Doesn't this exist already?
+`tinter` just simplifies a task usually done with `grDevices`.  It's default is to remove black and white from the palette.  
+
+```{r}
+tinter("blue")
+
+### ------ is identical to
+
+grDevices::colorRampPalette(colors = c("white", "blue", "black"))(11)[-(c(1, 11))]
+```
+
+```{r}
+tinter("blue", direction = "shades")
+
+### --- is identical to
+
+grDevices::colorRampPalette(colors = c("blue", "black"))(6)[-6]
+```
+
+
+```{r}
+tinter("blue", crop = 2)
+
+### --- is identical to
+
+grDevices::colorRampPalette(colors = c("white", "blue", "black"))(11)[-(c(1:2, 10:11))]
 ```
 
 ## Installation
