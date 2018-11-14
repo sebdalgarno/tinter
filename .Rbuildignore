@@ -1,3 +1,4 @@
+^CRAN-RELEASE$
 ^_pkgdown\.yml$
 ^CODE_OF_CONDUCT\.md$
 ^appveyor\.yml$
@@ -13,5 +14,3 @@
 ^docs$
 ^NEWS\.md$
 ^cran-comments\.md$
-
-
