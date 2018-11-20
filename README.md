@@ -12,6 +12,8 @@ status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/tin
 status](https://codecov.io/gh/poissonconsulting/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/tinter?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/tinter)](https://cran.r-project.org/package=tinter)
 
 ### Introduction
 
