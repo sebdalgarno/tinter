@@ -21,3 +21,8 @@ A vector of colours.
 \description{
 Generate shades, tints or both from a colour.
 }
+\examples{
+tinter("blue")
+tinter("#fa6a5c", steps = 10, crop = 3)
+tinter("#fa6a5c", direction = "tints")
+}

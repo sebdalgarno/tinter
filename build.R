@@ -1,3 +1,4 @@
+source("hex.R")
 devtools::test()
 devtools::document()
 # knitr::knit("README.Rmd")

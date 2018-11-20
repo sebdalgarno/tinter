@@ -6,8 +6,12 @@
 #' @param direction A string indicating whether to include 'tints', 'shades' or 'both'.
 #'
 #' @return A vector of colours.
-#'
 #' @export
+#' @examples
+#' tinter("blue")
+#' tinter("#fa6a5c", steps = 10, crop = 3)
+#' tinter("#fa6a5c", direction = "tints")
+
 tinter <- function(x, steps = 5, crop = 1, direction = "both"){
 
   check_colour(x)
