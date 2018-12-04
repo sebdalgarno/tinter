@@ -7,7 +7,7 @@ test_that("package", {
 
   expect_true("#1381C2" %in% tinter("#1381c2"))
   expect_false("#1381C2" %in% tinter("#1381c2", adjust = 0.1))
-  expect_true("#1381C2" %in% tinter("#1381c2", adjust = 0.1))
+  expect_false("#1381C2" %in% tinter("#1381c2", adjust = 0.1))
 
 
   expect_true("#1381C2" %in% tinter("#1381c2", direction = "shades"))
@@ -15,14 +15,10 @@ test_that("package", {
 
   expect_true("#FFFFFF" %in% tinter("#1381c2", crop = 0))
   expect_true("#000000" %in% tinter("#1381c2", crop = 0))
-  expect_true(all(tinter("#1381c2", crop = 0, adjust = 1) == "#FFFFFF"))
-  expect_true(all(tinter("#1381c2", crop = 0, adjust = -1) == "#000000"))
 
   expect_is(tinter("blue"), "character")
 
-  expect_length(darken(tinter("blue"), adjust = 0.1), 9L)
-  expect_length(lighten(tinter("blue"), adjust = 0.1), 9L)
-  expect_true(darken(tinter("blue"), 1) == "#000000")
-  expect_true(lighten(tinter("blue"), 1) == "#FFFFFF")
+  expect_length(darken(tinter("blue"), amount = 0.1), 9L)
+  expect_length(lighten(tinter("blue"), amount = 0.1), 9L)
 
 })

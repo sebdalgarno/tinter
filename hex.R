@@ -2,10 +2,8 @@ library(hexSticker)
 library(sf)
 library(ggplot2)
 library(dplyr)
-library(extrafont)
-# loadfonts()
-
 library(showtext)
+
 font_add_google("Montserrat", "montserrat")
 showtext_auto()
 
@@ -26,12 +24,12 @@ hexes <- do.call("rbind", lapply(buffers, function(x){
     mutate(id = x)
 }))
 
-hex_tint <- "#fa6a5c"
+hex_tint <- "#309099"
 hex_text <- "#263e51"
 hex_outline <- "#263e51"
 family <- "montserrat"
 pal <- rev(tinter::tinter(hex_tint, steps = length(buffers) +1 , crop = 2, direction = "both"))[-(1:6)]
-pal2 <- pal %>% colorspace::darken(amount = 0.1)
+pal2 <- pal %>% colorspace::lighten(amount = 0.1)
 # create more polygons
 gp <- ggplot() +
   geom_sf(data = hexes[1,], color = hex_outline, size = 7) +

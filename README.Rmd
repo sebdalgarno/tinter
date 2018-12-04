@@ -31,7 +31,7 @@ knitr::opts_chunk$set(
 
 ```{r global}
 library(tinter)
-hex <- "#fa6a5c"
+hex <- "#309099"
 
 ```
 

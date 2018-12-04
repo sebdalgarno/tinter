@@ -28,15 +28,15 @@ Easily define:
 
 ``` r
 library(tinter)
-hex <- "#fa6a5c"
+hex <- "#309099"
 ```
 
 ![](man/figures/README-colour-1.png)<!-- -->
 
 ``` r
 tinter(hex)
-#> [1] "#FEE1DE" "#FDC3BD" "#FBA59D" "#FB877C" "#FA6A5C" "#C85449" "#953F37"
-#> [8] "#632A24" "#311512"
+#> [1] "#D5E8EA" "#ACD2D6" "#82BCC1" "#59A6AD" "#309099" "#26737A" "#1C565B"
+#> [8] "#13393D" "#091C1E"
 ```
 
 ![](man/figures/README-tinter-1.png)<!-- -->
