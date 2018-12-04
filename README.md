@@ -22,6 +22,7 @@ Easily define:
   - number of colours to generate on either side (`steps`).
   - number of colours to remove from extreme end(s) of palette
     (e.g. default `crop = 1` eliminates black and white).
+  - darker or lighter output (`adjust`).
 
 <!-- end list -->
 
@@ -57,6 +58,12 @@ tinter(hex, steps = 10, crop = 7)
 ```
 
 ![](man/figures/README-crop-1.png)<!-- -->
+
+``` r
+tinter(hex, steps = 10, crop = 7, adjust = 0.4)
+```
+
+![](man/figures/README-darken-1.png)<!-- -->
 
 ### Create a choropleth map
 

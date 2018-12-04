@@ -113,7 +113,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>tinter</span>(<span class='no'>x</span>, <span class='kw'>steps</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>crop</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>direction</span> <span class='kw'>=</span> <span class='st'>"both"</span>)</pre>
+    <pre class="usage"><span class='fu'>tinter</span>(<span class='no'>x</span>, <span class='kw'>steps</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>crop</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>direction</span> <span class='kw'>=</span> <span class='st'>"both"</span>, <span class='kw'>adjust</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -133,6 +133,10 @@
     <tr>
       <th>direction</th>
       <td><p>A string indicating whether to include 'tints', 'shades' or 'both'.</p></td>
+    </tr>
+    <tr>
+      <th>adjust</th>
+      <td><p>A number between -1 and 1. A value below 0 will darken output; a value above 0 will lighten output.</p></td>
     </tr>
     </table>
     

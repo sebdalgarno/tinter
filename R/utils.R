@@ -19,3 +19,4 @@ check_colour <- function(x){
   if(class(res) == "try-error")
     stop(x, " is not a valid color", call. = FALSE)
 }
+

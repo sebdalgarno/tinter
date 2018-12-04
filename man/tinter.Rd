@@ -4,7 +4,7 @@
 \alias{tinter}
 \title{Generate shades, tints or both from a colour.}
 \usage{
-tinter(x, steps = 5, crop = 1, direction = "both")
+tinter(x, steps = 5, crop = 1, direction = "both", adjust = 0)
 }
 \arguments{
 \item{x}{A string of a colour in any format accepted by grDevices::col2rgb().}
@@ -14,6 +14,8 @@ tinter(x, steps = 5, crop = 1, direction = "both")
 \item{crop}{An integer indicating how many extreme colours to remove (e.g. crop = 1 eliminates 'black' and 'white').}
 
 \item{direction}{A string indicating whether to include 'tints', 'shades' or 'both'.}
+
+\item{adjust}{A number between -1 and 1. A value below 0 will darken output; a value above 0 will lighten output.}
 }
 \value{
 A vector of colours.

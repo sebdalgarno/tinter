@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • tinter</title>
+<title>Darken colour. — darken • tinter</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Darken colour. — darken" />
+
+<meta property="og:description" content="Darken colour." />
 
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -49,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -98,54 +100,53 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Darken colour.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/tinter/blob/master/R/tinter.R'><code>R/tinter.R</code></a></small>
+    <div class="hidden name"><code>darken.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Darken colour.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="darken.html">darken()</a></code> </p>
-        </td>
-        <td><p>Darken colour.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="lighten.html">lighten()</a></code> </p>
-        </td>
-        <td><p>Lighten colour.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tinter.html">tinter()</a></code> </p>
-        </td>
-        <td><p>Generate shades, tints or both from a colour.</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>darken</span>(<span class='no'>x</span>, <span class='no'>amount</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A vector of strings of colours in any format accepted by grDevices::col2rgb().</p></td>
+    </tr>
+    <tr>
+      <th>amount</th>
+      <td><p>A number from 0 to 1.</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>A vector of modified colours.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>darken</span>(<span class='fu'><a href='tinter.html'>tinter</a></span>(<span class='st'>"blue"</span>), <span class='fl'>0.2</span>)</div><div class='output co'>#&gt; [1] "#A5A5CE" "#7B7BCE" "#5252CE" "#2929CE" "#0000CE" "#0000A5" "#00007B"
+#&gt; [8] "#000051" "#000028"</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 
