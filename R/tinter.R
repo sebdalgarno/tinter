@@ -4,7 +4,7 @@
 #' @param steps An integer indicating how many shades/tints to generate (excluding x).
 #' @param crop An integer indicating how many extreme colours to remove (e.g. crop = 1 eliminates 'black' and 'white').
 #' @param direction A string indicating whether to include 'tints', 'shades' or 'both'.
-#' @param adjust A number between -1 and 1. A value below 0 will darken output; a value above 0 will lighten output.
+#' @param adjust A number between -1 and 1. Values between 0 and -1 increasingly darken colour; values between 0 and 1 increasingly lighten colour.
 #'
 #' @return A vector of colours.
 #' @export
