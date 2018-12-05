@@ -24,18 +24,19 @@ hexes <- do.call("rbind", lapply(buffers, function(x){
     mutate(id = x)
 }))
 
-hex_tint <- "#309099"
+hex_tint <- "#a6c2d8"
 hex_text <- "#263e51"
 hex_outline <- "#263e51"
 family <- "montserrat"
-pal <- rev(tinter::tinter(hex_tint, steps = length(buffers) +1 , crop = 2, direction = "both"))[-(1:6)]
+pal <- tinter::tinter(hex_tint, steps = length(buffers) - 1, crop = 0, direction = "tints")
+rev(tinter::tinter(hex_tint, steps = length(buffers) - 1, crop = 0, direction = "tints")) %>% shades::swatch()
 pal2 <- pal %>% colorspace::lighten(amount = 0.1)
 # create more polygons
 gp <- ggplot() +
   geom_sf(data = hexes[1,], color = hex_outline, size = 7) +
   geom_sf(data = hexes[-nrow(hexes),], aes(fill = id), alpha = 1, color = "transparent", size = 0.01) +
   scale_fill_gradientn(colours = pal) +
-  geom_text(aes(x = 1, y = 1, label = "tinter"), angle = 30, size = 43, colour = hex_text, family = family) +
+  geom_text(aes(x = 1, y = 1, label = "tinter"), size = 40, colour = hex_text, family = family) +
   geom_url(url = "github.com/poissonconsulting/tinter", family = family, size = 3, vjust = 0.1, color = hex_text) +
   theme_transparent() +
   theme(plot.margin = margin(b = -0.2, l = -0.2, unit = "lines"),
