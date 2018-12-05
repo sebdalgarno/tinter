@@ -88,11 +88,11 @@
 <li>darker or lighter output (<code>adjust</code>).</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(tinter)</a>
-<a class="sourceLine" id="cb1-2" title="2">hex &lt;-<span class="st"> "#fa6a5c"</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-2" title="2">hex &lt;-<span class="st"> "#a6c2d8"</span></a></code></pre></div>
 <p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-colour-1.png" width="192"></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex)</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; [1] "#FEE1DE" "#FDC3BD" "#FBA59D" "#FB877C" "#FA6A5C" "#C85449" "#953F37"</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; [8] "#632A24" "#311512"</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; [1] "#EDF2F7" "#DBE6EF" "#C9DAE7" "#B7CEDF" "#A6C2D8" "#849BAC" "#637481"</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; [8] "#424D56" "#21262B"</span></a></code></pre></div>
 <p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-tinter-1.png" width="192"></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">direction =</span> <span class="st">"tints"</span>)</a></code></pre></div>
 <p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-tints-1.png" width="192"></p>
@@ -111,12 +111,12 @@
 <a class="sourceLine" id="cb7-3" title="3"></a>
 <a class="sourceLine" id="cb7-4" title="4">nc &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/sf/topics/st_read">st_read</a></span>(<span class="kw">system.file</span>(<span class="dt">package =</span> <span class="st">"sf"</span>, <span class="st">"shape/nc.shp"</span>))</a>
 <a class="sourceLine" id="cb7-5" title="5"></a>
-<a class="sourceLine" id="cb7-6" title="6"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> nc) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggsf">geom_sf</a></span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">fill =</span> AREA), <span class="dt">colour =</span> <span class="st">"white"</span>, <span class="dt">lwd =</span> <span class="fl">0.05</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="dt">data =</span> nc) <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">fill =</span> AREA), <span class="dt">colour =</span> <span class="st">"white"</span>, <span class="dt">lwd =</span> <span class="fl">0.05</span>) <span class="op">+</span></a>
 <a class="sourceLine" id="cb7-8" title="8"><span class="st">  </span><span class="co"># colours from tinter</span></a>
-<a class="sourceLine" id="cb7-9" title="9"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_gradient">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_void</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-11" title="11"><span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggsf">coord_sf</a></span>(<span class="dt">datum =</span> <span class="ot">NA</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb7-9" title="9"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">coord_sf</a></span>(<span class="dt">datum =</span> <span class="ot">NA</span>)</a></code></pre></div>
 <p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-plot-1.png" width="768"></p>
 </div>
 <div id="doesnt-this-already-exist" class="section level3">

@@ -1,4 +1,4 @@
-* This is a resubmission with examples added.
+* This is a resubmission with two additional functions (darken and lighten), and 'adjust' argument added to the tinter function to adjust darkness/lightness of output and examples added (as requested).
 
 ## Test environments
 * local OS X install, R 3.5.1
