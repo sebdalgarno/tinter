@@ -124,6 +124,10 @@ grDevices::colorRampPalette(colors = c("white", "blue", "black"))(11)[-(c(1:2, 1
 
 ## Installation
 
+To install from CRAN
+
+    install.packages("tinter")
+
 To install the latest development version from
 [GitHub](https://github.com/poissonconsulting/tinter)
 
