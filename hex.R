@@ -30,7 +30,7 @@ hex_outline <- "#263e51"
 family <- "montserrat"
 pal <- tinter::tinter(hex_tint, steps = length(buffers) - 1, crop = 0, direction = "tints")
 rev(tinter::tinter(hex_tint, steps = length(buffers) - 1, crop = 0, direction = "tints")) %>% shades::swatch()
-pal2 <- pal %>% colorspace::lighten(amount = 0.1)
+pal2 <- pal %>% tinter::lighten(amount = 0.1)
 # create more polygons
 gp <- ggplot() +
   geom_sf(data = hexes[1,], color = hex_outline, size = 7) +
