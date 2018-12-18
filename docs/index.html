@@ -40,7 +40,7 @@
 <li>
   <a href="index.html">
     <span class="fa fa-home fa-lg"></span>
-
+     
   </a>
 </li>
 <li>
@@ -54,7 +54,7 @@
 <li>
   <a href="https://github.com/poissonconsulting/tinter">
     <span class="fa fa-github fa-lg"></span>
-
+     
   </a>
 </li>
       </ul>
@@ -65,17 +65,17 @@
 </div>
 <!--/.navbar -->
 
-
+      
       </header><div class="row">
   <div class="col-md-9 contents">
+    
 
-
-
-
+    
+    
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="tinter" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#tinter" class="anchor"></a>tinter <img src="/man/figures/logo.png" align="right" width="15%">
+<a href="#tinter" class="anchor"></a>tinter <img src="reference/figures/logo.png" align="right" width="15%">
 </h1></div>
 
 <div id="introduction" class="section level3">
@@ -90,19 +90,19 @@
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tinter)</a>
 <a class="sourceLine" id="cb1-2" title="2">hex &lt;-<span class="st"> "#a6c2d8"</span></a></code></pre></div>
-<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-colour-1.png" width="192"></p>
+<p><img src="reference/figures/README-colour-1.png" width="192"></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex)</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; [1] "#EDF2F7" "#DBE6EF" "#C9DAE7" "#B7CEDF" "#A6C2D8" "#849BAC" "#637481"</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; [8] "#424D56" "#21262B"</span></a></code></pre></div>
-<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-tinter-1.png" width="192"></p>
+<p><img src="reference/figures/README-tinter-1.png" width="192"></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">direction =</span> <span class="st">"tints"</span>)</a></code></pre></div>
-<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-tints-1.png" width="192"></p>
+<p><img src="reference/figures/README-tints-1.png" width="192"></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">steps =</span> <span class="dv">10</span>)</a></code></pre></div>
-<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-steps-1.png" width="192"></p>
+<p><img src="reference/figures/README-steps-1.png" width="192"></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">steps =</span> <span class="dv">10</span>, <span class="dt">crop =</span> <span class="dv">7</span>)</a></code></pre></div>
-<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-crop-1.png" width="192"></p>
+<p><img src="reference/figures/README-crop-1.png" width="192"></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">steps =</span> <span class="dv">10</span>, <span class="dt">crop =</span> <span class="dv">7</span>, <span class="dt">adjust =</span> <span class="fl">0.4</span>)</a></code></pre></div>
-<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-darken-1.png" width="192"></p>
+<p><img src="reference/figures/README-darken-1.png" width="192"></p>
 </div>
 <div id="create-a-choropleth-map" class="section level3">
 <h3 class="hasAnchor">
@@ -118,7 +118,7 @@
 <a class="sourceLine" id="cb7-9" title="9"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb7-10" title="10"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>() <span class="op">+</span></a>
 <a class="sourceLine" id="cb7-11" title="11"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">coord_sf</a></span>(<span class="dt">datum =</span> <span class="ot">NA</span>)</a></code></pre></div>
-<p><img src="../../../../Dropbox%20(Poisson%20Consulting)/Code/tinter/tinter/man/figures/README-plot-1.png" width="768"></p>
+<p><img src="reference/figures/README-plot-1.png" width="768"></p>
 </div>
 <div id="doesnt-this-already-exist" class="section level3">
 <h3 class="hasAnchor">
@@ -177,11 +177,11 @@ install.packages("tinter")</a></code></pre>
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=tinter">https://cloud.r-project.org/package=tinter</a>
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=tinter">https://​cloud.r-project.org/​package=tinter</a>
 </li>
-<li>Browse source code at <br><a href="https://github.com/poissonconsulting/tinter">https://github.com/poissonconsulting/tinter</a>
+<li>Browse source code at <br><a href="https://github.com/poissonconsulting/tinter">https://​github.com/​poissonconsulting/​tinter</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/poissonconsulting/tinter/issues">https://github.com/poissonconsulting/tinter/issues</a>
+<li>Report a bug at <br><a href="https://github.com/poissonconsulting/tinter/issues">https://​github.com/​poissonconsulting/​tinter/​issues</a>
 </li>
 </ul>
 </div>
@@ -226,7 +226,7 @@ install.packages("tinter")</a></code></pre>
       </footer>
 </div>
 
-
+  
 
   </body>
 </html>
