@@ -18,13 +18,13 @@ hex_sf <- st_as_sf(hexd, coords = c("x", "y")) %>%
   st_cast("LINESTRING") %>%
   st_cast("POLYGON")
 
-buffers <- seq(-0.05, -0.85, -0.2)
+buffers <- seq(-0.05, -0.85, -0.15)
 hexes <- do.call("rbind", lapply(buffers, function(x){
   st_buffer(hex_sf, x) %>%
     mutate(id = x)
 }))
 
-hex_tint <- "#a6c2d8"
+hex_tint <- "#335CAC"
 hex_text <- "#263e51"
 hex_outline <- "#263e51"
 family <- "montserrat"
@@ -48,6 +48,6 @@ gp <- ggplot() +
         plot.background = element_blank()
         ) +
   coord_sf(datum = NA)
-
+gp
 ggsave(plot = gp, filename = "man/figures/logo.png", device = "png")
 
