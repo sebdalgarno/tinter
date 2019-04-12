@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# tinter <img src="man/figures/logo.png" align="right" width='15%'/>
+# tinter <img src="https://raw.githubusercontent.com/poissonconsulting/tinter/master/docs/logo.png"  align="right" width='25%'/>
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
@@ -14,6 +14,7 @@ status](https://codecov.io/gh/poissonconsulting/tinter/branch/master/graph/badge
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/tinter)](https://cran.r-project.org/package=tinter)
+![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/tinter)
 
 ### Introduction
 
@@ -33,7 +34,7 @@ library(tinter)
 hex <- "#335CAC"
 ```
 
-![](man/figures/README-colour-1.png)<!-- -->
+![](README_files/figure-gfm/colour-1.png)<!-- -->
 
 ``` r
 tinter(hex)
@@ -41,31 +42,31 @@ tinter(hex)
 #> [8] "#142444" "#0A1222"
 ```
 
-![](man/figures/README-tinter-1.png)<!-- -->
+![](README_files/figure-gfm/tinter-1.png)<!-- -->
 
 ``` r
 tinter(hex, direction = "tints")
 ```
 
-![](man/figures/README-tints-1.png)<!-- -->
+![](README_files/figure-gfm/tints-1.png)<!-- -->
 
 ``` r
 tinter(hex, steps = 10)
 ```
 
-![](man/figures/README-steps-1.png)<!-- -->
+![](README_files/figure-gfm/steps-1.png)<!-- -->
 
 ``` r
 tinter(hex, steps = 10, crop = 7)
 ```
 
-![](man/figures/README-crop-1.png)<!-- -->
+![](README_files/figure-gfm/crop-1.png)<!-- -->
 
 ``` r
 tinter(hex, steps = 10, crop = 7, adjust = 0.4)
 ```
 
-![](man/figures/README-darken-1.png)<!-- -->
+![](README_files/figure-gfm/darken-1.png)<!-- -->
 
 ### Create a choropleth map
 
@@ -83,7 +84,7 @@ ggplot(data = nc) +
   coord_sf(datum = NA)
 ```
 
-![](man/figures/README-plot-1.png)<!-- -->
+![](README_files/figure-gfm/plot-1.png)<!-- -->
 
 ### Doesn’t this already exist?
 
