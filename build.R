@@ -6,8 +6,6 @@ if(TRUE) {
   if(file.exists("DESCRIPTION")) unlink("docs", recursive = TRUE)
   pkgdown::build_site()
 }
-### pkgdown absolute path issue unresolved - this is a workaround so CRAN checks pass
-unlink("README_files", recursive = TRUE)
-unlink("figure", recursive = TRUE)
+# need to resolve pkgdown path issue before submitting to cran for update
 
 devtools::check()
