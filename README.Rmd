@@ -149,22 +149,20 @@ grDevices::colorRampPalette(colors = c("white", "blue", "black"))(11)[-(c(1:2, 1
 
 ## Installation
 
-To install from CRAN
-```
+To install the latest release from [CRAN](https://cran.r-project.org)
+```{r, eval=FALSE}
 install.packages("tinter")
 ```
 
-To install the latest development version from [GitHub](https://github.com/poissonconsulting/tinter)
-```
-install.packages("devtools")
-devtools::install_github("poissonconsulting/err")
-devtools::install_github("poissonconsulting/checkr")
-devtools::install_github("poissonconsulting/tinter")
+To install the developmental version from [GitHub](https://github.com/poissonconsulting/tinter)
+```{r, eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("poissonconsulting/tinter")
 ```
 
-To install the latest development version from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
-```
-install.packages("drat")
+To install the latest developmental release from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
+```{r, eval=FALSE}
+# install.packages("drat")
 drat::addRepo("poissonconsulting")
 install.packages("tinter")
 ```

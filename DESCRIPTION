@@ -8,7 +8,7 @@ Description: Generate a palette of tints, shades or both from a single colour.
 URL: https://github.com/poissonconsulting/tinter
 BugReports: https://github.com/poissonconsulting/tinter/issues
 Imports: 
-    checkr,
+    chk,
     grDevices
 Suggests: 
     graphics,

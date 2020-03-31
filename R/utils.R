@@ -15,6 +15,7 @@ tint <- function(x, steps, crop){
 }
 
 check_colour <- function(x){
+  chk_string(x)
   res <- try(grDevices::col2rgb(x),silent = TRUE)
   if(class(res) == "try-error")
     stop(x, " is not a valid color", call. = FALSE)
