@@ -20,5 +20,4 @@ test_that("package", {
 
   expect_length(darken(tinter("blue"), amount = 0.1), 9L)
   expect_length(lighten(tinter("blue"), amount = 0.1), 9L)
-
 })
