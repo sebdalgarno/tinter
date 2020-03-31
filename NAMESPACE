@@ -3,4 +3,4 @@
 export(darken)
 export(lighten)
 export(tinter)
-import(checkr)
+import(chk)
