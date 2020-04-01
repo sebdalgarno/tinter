@@ -14,3 +14,4 @@
 ^docs$
 ^NEWS\.md$
 ^cran-comments\.md$
+^data-raw$

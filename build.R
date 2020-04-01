@@ -1,4 +1,6 @@
-source("hex.R")
+if(FALSE) {
+  source("data-raw/hex.R")
+}
 
 roxygen2md::roxygen2md()
 
