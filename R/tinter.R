@@ -12,35 +12,35 @@
 #' tinter("blue")
 #' tinter("#fa6a5c", steps = 10, crop = 3)
 #' tinter("#fa6a5c", direction = "tints")
-
-tinter <- function(x, steps = 5, crop = 1, direction = "both", adjust = 0){
-
+tinter <- function(x, steps = 5, crop = 1, direction = "both", adjust = 0) {
   check_colour(x)
-  check_length(x, length = 1L)
-  steps <- check_noneg_int(steps, coerce = TRUE)
-  crop <- check_noneg_int(crop, coerce = TRUE)
-  check_vector(direction, values = c("shades", "tints", "both"))
-  check_vector(adjust, c(-1, 1))
+  chk_whole_number(steps)
+  chk_whole_number(crop)
+  chk_string(direction)
+  chk_subset(direction, c("shades", "tints", "both"))
+  chk_number(adjust)
+  chk_range(adjust, c(-1, 1))
 
-  if(crop > steps)
+  if (crop > steps) {
     stop("crop cannot be greater than steps.", call. = FALSE)
+  }
 
   shades <- shade(x, steps, crop)
   tints <- tint(x, steps, crop)
 
   res <- c(tints, shades[-1])
 
-  if(direction == "shades"){
+  if (direction == "shades") {
     res <- shades
   }
-  if(direction == "tints"){
+  if (direction == "tints") {
     res <- tints
   }
 
-  if(adjust == 0){
+  if (adjust == 0) {
     return(res)
   }
-  if(adjust > 0){
+  if (adjust > 0) {
     return(lighten(res, 1 - adjust))
   }
   darken(res, abs(adjust))
@@ -55,11 +55,13 @@ tinter <- function(x, steps = 5, crop = 1, direction = "both", adjust = 0){
 #' @export
 #' @examples
 #' darken(tinter("blue"), 0.2)
-
-darken <- function(x, amount){
+darken <- function(x, amount) {
   lapply(x, check_colour)
-  check_vector(amount, values = c(0, 1))
-  sapply(x, function(x){shade(x, 100, 0)[amount*100]}, USE.NAMES = FALSE)
+  chk_number(amount)
+  chk_range(amount)
+  sapply(x, function(x) {
+    shade(x, 100, 0)[amount * 100]
+  }, USE.NAMES = FALSE)
 }
 
 #' Lighten colour.
@@ -71,13 +73,15 @@ darken <- function(x, amount){
 #' @export
 #' @examples
 #' lighten(tinter("blue"), 0.2)
-
-lighten <- function(x, amount){
+lighten <- function(x, amount) {
   lapply(x, check_colour)
-  check_vector(amount, values = c(0, 1))
+  chk_number(amount)
+  chk_range(amount)
 
-  if(amount == 0){
+  if (amount == 0) {
     amount <- 0.01
   }
-  sapply(x, function(x){tint(x, 100, 0)[amount*100]}, USE.NAMES = FALSE)
+  sapply(x, function(x) {
+    tint(x, 100, 0)[amount * 100]
+  }, USE.NAMES = FALSE)
 }

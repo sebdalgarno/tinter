@@ -34,7 +34,7 @@ library(tinter)
 hex <- "#335CAC"
 ```
 
-![](README_files/figure-gfm/colour-1.png)<!-- -->
+![](tools/README-colour-1.png)<!-- -->
 
 ``` r
 tinter(hex)
@@ -42,31 +42,31 @@ tinter(hex)
 #> [8] "#142444" "#0A1222"
 ```
 
-![](README_files/figure-gfm/tinter-1.png)<!-- -->
+![](tools/README-tinter-1.png)<!-- -->
 
 ``` r
 tinter(hex, direction = "tints")
 ```
 
-![](README_files/figure-gfm/tints-1.png)<!-- -->
+![](tools/README-tints-1.png)<!-- -->
 
 ``` r
 tinter(hex, steps = 10)
 ```
 
-![](README_files/figure-gfm/steps-1.png)<!-- -->
+![](tools/README-steps-1.png)<!-- -->
 
 ``` r
 tinter(hex, steps = 10, crop = 7)
 ```
 
-![](README_files/figure-gfm/crop-1.png)<!-- -->
+![](tools/README-crop-1.png)<!-- -->
 
 ``` r
 tinter(hex, steps = 10, crop = 7, adjust = 0.4)
 ```
 
-![](README_files/figure-gfm/darken-1.png)<!-- -->
+![](tools/README-darken-1.png)<!-- -->
 
 ### Create a choropleth map
 
@@ -84,7 +84,7 @@ ggplot(data = nc) +
   coord_sf(datum = NA)
 ```
 
-![](README_files/figure-gfm/plot-1.png)<!-- -->
+![](tools/README-plot-1.png)<!-- -->
 
 ### Doesn’t this already exist?
 
@@ -125,24 +125,28 @@ grDevices::colorRampPalette(colors = c("white", "blue", "black"))(11)[-(c(1:2, 1
 
 ## Installation
 
-To install from CRAN
+To install the latest release from [CRAN](https://cran.r-project.org)
 
-    install.packages("tinter")
+``` r
+install.packages("tinter")
+```
 
-To install the latest development version from
+To install the developmental version from
 [GitHub](https://github.com/poissonconsulting/tinter)
 
-    install.packages("devtools")
-    devtools::install_github("poissonconsulting/err")
-    devtools::install_github("poissonconsulting/checkr")
-    devtools::install_github("poissonconsulting/tinter")
+``` r
+# install.packages("remotes")
+remotes::install_github("poissonconsulting/tinter")
+```
 
-To install the latest development version from the Poisson drat
+To install the latest developmental release from the Poisson drat
 [repository](https://github.com/poissonconsulting/drat)
 
-    install.packages("drat")
-    drat::addRepo("poissonconsulting")
-    install.packages("tinter")
+``` r
+# install.packages("drat")
+drat::addRepo("poissonconsulting")
+install.packages("tinter")
+```
 
 ## Contribution
 

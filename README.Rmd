@@ -4,13 +4,15 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r setup, include = FALSE}
+```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.width=5, fig.height=1
+  fig.path = "tools/README-",
+  fig.width = 5, fig.height = 1
 )
 ```
+
 
 # tinter <img src="https://raw.githubusercontent.com/poissonconsulting/tinter/master/docs/logo.png"  align="right" width='15%'/>
 
@@ -38,23 +40,28 @@ hex <- "#335CAC"
 ```
 
 ```{r colour, echo = FALSE, fig.width = 2, fig.height = 0.5}
-tinter_plot <- function(x){
+tinter_plot <- function(x) {
   grid <- c(length(x), 1)
-  width <- 0.9/(max(grid) + 1)
-  gap <- 1/(max(grid) + 1)
-  centres <- lapply(grid, function(i) gap * ((max(grid) -
-                                                i)/2 + seq_len(i)))
+  width <- 0.9 / (max(grid) + 1)
+  gap <- 1 / (max(grid) + 1)
+  centres <- lapply(grid, function(i) {
+    gap * ((max(grid) -
+      i) / 2 + seq_len(i))
+  })
   centres <- as.matrix(expand.grid(centres))
   oldPars <- graphics::par(mai = c(0, 0, 0, 0), bg = "white")
   on.exit(graphics::par(oldPars))
   devSize <- grDevices::dev.size()
-  devRatio <- devSize[2]/devSize[1]
-  graphics::plot(NA, NA, xlim = c(-0.1, 1.1), ylim = 0.5 + c(-1, 1) *
-         devRatio * 0.6, xlab = "", ylab = "", xaxt = "n", yaxt = "n",
-       bty = "n", asp = 1)
-  graphics::rect(centres[, 1] - width/2, rev(centres[, 2]) - width/2,
-       centres[, 1] + width/2, rev(centres[, 2]) + width/2,
-       col = x, border = "white", lwd = 0.2)
+  devRatio <- devSize[2] / devSize[1]
+  graphics::plot(NA, NA,
+    xlim = c(-0.1, 1.1), ylim = 0.5 + c(-1, 1) *
+      devRatio * 0.6, xlab = "", ylab = "", xaxt = "n", yaxt = "n",
+    bty = "n", asp = 1
+  )
+  graphics::rect(centres[, 1] - width / 2, rev(centres[, 2]) - width / 2,
+    centres[, 1] + width / 2, rev(centres[, 2]) + width / 2,
+    col = x, border = "white", lwd = 0.2
+  )
 }
 
 tinter_plot(hex)
@@ -147,22 +154,20 @@ grDevices::colorRampPalette(colors = c("white", "blue", "black"))(11)[-(c(1:2, 1
 
 ## Installation
 
-To install from CRAN
-```
+To install the latest release from [CRAN](https://cran.r-project.org)
+```{r, eval=FALSE}
 install.packages("tinter")
 ```
 
-To install the latest development version from [GitHub](https://github.com/poissonconsulting/tinter)
-```
-install.packages("devtools")
-devtools::install_github("poissonconsulting/err")
-devtools::install_github("poissonconsulting/checkr")
-devtools::install_github("poissonconsulting/tinter")
+To install the developmental version from [GitHub](https://github.com/poissonconsulting/tinter)
+```{r, eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("poissonconsulting/tinter")
 ```
 
-To install the latest development version from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
-```
-install.packages("drat")
+To install the latest developmental release from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
+```{r, eval=FALSE}
+# install.packages("drat")
 drat::addRepo("poissonconsulting")
 install.packages("tinter")
 ```
