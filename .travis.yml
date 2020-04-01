@@ -1,5 +1,20 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
 language: R
-sudo: false
 cache: packages
+
+r:
+  - devel
+  - release
+  - oldrel
+  - 3.5
+  - 3.4
+
+after_success:
+  - Rscript -e 'covr::codecov()'
+
+notifications:
+  email: false
+  slack:
+    rooms:
+      - poissonconsulting:BKjfn7jsVh8zXTu2rq7BEQEb
+    on_success: change
+    on_failure: change
