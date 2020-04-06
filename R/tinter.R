@@ -13,7 +13,7 @@
 #' tinter("#fa6a5c", steps = 10, crop = 3)
 #' tinter("#fa6a5c", direction = "tints")
 tinter <- function(x, steps = 5, crop = 1, direction = "both", adjust = 0) {
-  check_colour(x)
+  chk_colour(x)
   chk_whole_number(steps)
   chk_whole_number(crop)
   chk_string(direction)
@@ -56,7 +56,7 @@ tinter <- function(x, steps = 5, crop = 1, direction = "both", adjust = 0) {
 #' @examples
 #' darken(tinter("blue"), 0.2)
 darken <- function(x, amount) {
-  lapply(x, check_colour)
+  chk_all(x, chk_colour)
   chk_number(amount)
   chk_range(amount)
   sapply(x, function(x) {
@@ -74,7 +74,7 @@ darken <- function(x, amount) {
 #' @examples
 #' lighten(tinter("blue"), 0.2)
 lighten <- function(x, amount) {
-  lapply(x, check_colour)
+  chk_all(x, chk_colour)
   chk_number(amount)
   chk_range(amount)
 
