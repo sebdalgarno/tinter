@@ -6,20 +6,27 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Generate a Monochromatic Palette • tinter</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Generate a Monochromatic Palette">
 <meta property="og:description" content="Generate a palette of tints, shades or both from a single colour.">
 <meta property="og:image" content="/logo.png">
-<meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
-    <div class="container template-article">
+<body data-spy="scroll" data-target="#toc">
+    <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -31,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">tinter</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -39,7 +46,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -52,8 +59,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/poissonconsulting/tinter">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/poissonconsulting/tinter/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -66,102 +73,96 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
-  <div class="col-md-9 contents">
-    
 
-    
-    
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+      </header><div class="row">
+  <div class="contents col-md-9">
 <div id="tinter" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#tinter" class="anchor"></a>tinter <img src="https://raw.githubusercontent.com/poissonconsulting/tinter/master/docs/logo.png" align="right" width="15%">
 </h1></div>
-<p><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a> <a href="https://travis-ci.org/poissonconsulting/tinter"><img src="https://travis-ci.org/poissonconsulting/tinter.svg?branch=master" alt="Travis build status"></a> <a href="https://ci.appveyor.com/project/sebdalgarno/tinter"><img src="https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&amp;svg=true" alt="AppVeyor build status"></a> <a href="https://codecov.io/github/poissonconsulting/tinter?branch=master"><img src="https://codecov.io/gh/poissonconsulting/tinter/branch/master/graph/badge.svg" alt="Coverage status"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a> <a href="https://cran.r-project.org/package=tinter"><img src="https://www.r-pkg.org/badges/version/tinter" alt="CRAN status"></a> <img src="http://cranlogs.r-pkg.org/badges/grand-total/tinter" alt="CRAN Downloads"></p>
+
 <div id="introduction" class="section level3">
 <h3 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h3>
 <p><code>tinter</code> provides a simple way to generate monochromatic palettes. Easily define:</p>
 <ul>
-<li>palette direction (“shades”, “tints”, or “both”).</li>
+<li>palette direction (âshadesâ, âtintsâ, or âbothâ).</li>
 <li>number of colours to generate on either side (<code>steps</code>).</li>
-<li>number of colours to remove from extreme end(s) of palette (e.g. default <code>crop = 1</code> eliminates black and white).</li>
+<li>number of colours to remove from extreme end(s) of palette (e.g.Â default <code>crop = 1</code> eliminates black and white).</li>
 <li>darker or lighter output (<code>adjust</code>).</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tinter)</a>
-<a class="sourceLine" id="cb1-2" title="2">hex &lt;-<span class="st"> "#335CAC"</span></a></code></pre></div>
-<p><img src="index_files/figure-html/colour-1.png" width="192"></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex)</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co">#&gt; [1] "#D6DEEE" "#ADBDDD" "#849DCD" "#5B7CBC" "#335CAC" "#284989" "#1E3767"</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; [8] "#142444" "#0A1222"</span></a></code></pre></div>
-<p><img src="index_files/figure-html/tinter-1.png" width="480"></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">direction =</span> <span class="st">"tints"</span>)</a></code></pre></div>
-<p><img src="index_files/figure-html/tints-1.png" width="480"></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">steps =</span> <span class="dv">10</span>)</a></code></pre></div>
-<p><img src="index_files/figure-html/steps-1.png" width="480"></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">steps =</span> <span class="dv">10</span>, <span class="dt">crop =</span> <span class="dv">7</span>)</a></code></pre></div>
-<p><img src="index_files/figure-html/crop-1.png" width="480"></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex, <span class="dt">steps =</span> <span class="dv">10</span>, <span class="dt">crop =</span> <span class="dv">7</span>, <span class="dt">adjust =</span> <span class="fl">0.4</span>)</a></code></pre></div>
-<p><img src="index_files/figure-html/darken-1.png" width="480"></p>
+<!-- end list --><div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tinter</span>)
+<span class="no">hex</span> <span class="kw">&lt;-</span> <span class="st">"#335CAC"</span></pre></div>
+<p><img src="tools/README-colour-1.png"><!-- --></p>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>)
+<span class="co">#&gt; [1] "#D6DEEE" "#ADBDDD" "#849DCD" "#5B7CBC" "#335CAC" "#284989" "#1E3767"</span>
+<span class="co">#&gt; [8] "#142444" "#0A1222"</span></pre></div>
+<p><img src="tools/README-tinter-1.png"><!-- --></p>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">direction</span> <span class="kw">=</span> <span class="st">"tints"</span>)</pre></div>
+<p><img src="tools/README-tints-1.png"><!-- --></p>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">steps</span> <span class="kw">=</span> <span class="fl">10</span>)</pre></div>
+<p><img src="tools/README-steps-1.png"><!-- --></p>
+<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">steps</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">crop</span> <span class="kw">=</span> <span class="fl">7</span>)</pre></div>
+<p><img src="tools/README-crop-1.png"><!-- --></p>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">steps</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">crop</span> <span class="kw">=</span> <span class="fl">7</span>, <span class="kw">adjust</span> <span class="kw">=</span> <span class="fl">0.4</span>)</pre></div>
+<p><img src="tools/README-darken-1.png"><!-- --></p>
 </div>
 <div id="create-a-choropleth-map" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-choropleth-map" class="anchor"></a>Create a choropleth map</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(sf)</a>
-<a class="sourceLine" id="cb7-3" title="3"></a>
-<a class="sourceLine" id="cb7-4" title="4">nc &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/sf/topics/st_read">st_read</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="dt">package =</span> <span class="st">"sf"</span>, <span class="st">"shape/nc.shp"</span>))</a>
-<a class="sourceLine" id="cb7-5" title="5"></a>
-<a class="sourceLine" id="cb7-6" title="6"><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> nc) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-7" title="7"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggsf">geom_sf</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">fill =</span> AREA), <span class="dt">colour =</span> <span class="st">"white"</span>, <span class="dt">lwd =</span> <span class="fl">0.05</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-8" title="8"><span class="st">  </span><span class="co"># colours from tinter</span></a>
-<a class="sourceLine" id="cb7-9" title="9"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/scale_gradient">scale_fill_gradientn</a></span>(<span class="dt">colours =</span> <span class="kw"><a href="reference/tinter.html">tinter</a></span>(hex)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-10" title="10"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggtheme">theme_void</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb7-11" title="11"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggsf">coord_sf</a></span>(<span class="dt">datum =</span> <span class="ot">NA</span>)</a></code></pre></div>
-<p><img src="index_files/figure-html/plot-1.png" width="768"></p>
+<div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">sf</span>)
+
+<span class="no">nc</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/sf/man/st_read.html">st_read</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="kw">package</span> <span class="kw">=</span> <span class="st">"sf"</span>, <span class="st">"shape/nc.shp"</span>))
+
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">nc</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">fill</span> <span class="kw">=</span> <span class="no">AREA</span>), <span class="kw">colour</span> <span class="kw">=</span> <span class="st">"white"</span>, <span class="kw">lwd</span> <span class="kw">=</span> <span class="fl">0.05</span>) +
+  <span class="co"># colours from tinter</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="kw">colours</span> <span class="kw">=</span> <span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>() +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">coord_sf</a></span>(<span class="kw">datum</span> <span class="kw">=</span> <span class="fl">NA</span>)</pre></div>
+<p><img src="tools/README-plot-1.png"><!-- --></p>
 </div>
 <div id="doesnt-this-already-exist" class="section level3">
 <h3 class="hasAnchor">
-<a href="#doesnt-this-already-exist" class="anchor"></a>Doesn’t this already exist?</h3>
-<p><code>tinter</code> just simplifies a task usually done with <code>grDevices</code>. It’s default is to remove black and white from the palette.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>)</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="co">#&gt; [1] "#CCCCFF" "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099"</span></a>
-<a class="sourceLine" id="cb8-3" title="3"><span class="co">#&gt; [8] "#000065" "#000032"</span></a>
-<a class="sourceLine" id="cb8-4" title="4"></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="co">### ------ is identical to</span></a>
-<a class="sourceLine" id="cb8-6" title="6"></a>
-<a class="sourceLine" id="cb8-7" title="7">grDevices<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/grDevices/topics/colorRamp">colorRampPalette</a></span>(<span class="dt">colors =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="dv">11</span>)[<span class="op">-</span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>, <span class="dv">11</span>))]</a>
-<a class="sourceLine" id="cb8-8" title="8"><span class="co">#&gt; [1] "#CCCCFF" "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098"</span></a>
-<a class="sourceLine" id="cb8-9" title="9"><span class="co">#&gt; [8] "#000065" "#000032"</span></a></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, <span class="dt">direction =</span> <span class="st">"shades"</span>)</a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="co">#&gt; [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"</span></a>
-<a class="sourceLine" id="cb9-3" title="3"></a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="co">### --- is identical to</span></a>
-<a class="sourceLine" id="cb9-5" title="5"></a>
-<a class="sourceLine" id="cb9-6" title="6">grDevices<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/grDevices/topics/colorRamp">colorRampPalette</a></span>(<span class="dt">colors =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="dv">6</span>)[<span class="op">-</span><span class="dv">6</span>]</a>
-<a class="sourceLine" id="cb9-7" title="7"><span class="co">#&gt; [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"</span></a></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, <span class="dt">crop =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="co">#&gt; [1] "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099" "#000065"</span></a>
-<a class="sourceLine" id="cb10-3" title="3"></a>
-<a class="sourceLine" id="cb10-4" title="4"><span class="co">### --- is identical to</span></a>
-<a class="sourceLine" id="cb10-5" title="5"></a>
-<a class="sourceLine" id="cb10-6" title="6">grDevices<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/grDevices/topics/colorRamp">colorRampPalette</a></span>(<span class="dt">colors =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="dv">11</span>)[<span class="op">-</span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dv">10</span><span class="op">:</span><span class="dv">11</span>))]</a>
-<a class="sourceLine" id="cb10-7" title="7"><span class="co">#&gt; [1] "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098" "#000065"</span></a></code></pre></div>
+<a href="#doesnt-this-already-exist" class="anchor"></a>Doesnât this already exist?</h3>
+<p><code>tinter</code> just simplifies a task usually done with <code>grDevices</code>. Itâs default is to remove black and white from the palette.</p>
+<div class="sourceCode" id="cb8"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>)
+<span class="co">#&gt; [1] "#CCCCFF" "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099"</span>
+<span class="co">#&gt; [8] "#000065" "#000032"</span>
+
+<span class="co">### ------ is identical to</span>
+
+<span class="kw pkg">grDevices</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span>(<span class="kw">colors</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="fl">11</span>)[-(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">11</span>))]
+<span class="co">#&gt; [1] "#CCCCFF" "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098"</span>
+<span class="co">#&gt; [8] "#000065" "#000032"</span></pre></div>
+<div class="sourceCode" id="cb9"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, <span class="kw">direction</span> <span class="kw">=</span> <span class="st">"shades"</span>)
+<span class="co">#&gt; [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"</span>
+
+<span class="co">### --- is identical to</span>
+
+<span class="kw pkg">grDevices</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span>(<span class="kw">colors</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="fl">6</span>)[-<span class="fl">6</span>]
+<span class="co">#&gt; [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"</span></pre></div>
+<div class="sourceCode" id="cb10"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, <span class="kw">crop</span> <span class="kw">=</span> <span class="fl">2</span>)
+<span class="co">#&gt; [1] "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099" "#000065"</span>
+
+<span class="co">### --- is identical to</span>
+
+<span class="kw pkg">grDevices</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span>(<span class="kw">colors</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="fl">11</span>)[-(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>:<span class="fl">2</span>, <span class="fl">10</span>:<span class="fl">11</span>))]
+<span class="co">#&gt; [1] "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098" "#000065"</span></pre></div>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>To install from CRAN</p>
-<pre><code><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages("tinter")</a></code></pre>
-<p>To install the latest development version from <a href="https://github.com/poissonconsulting/tinter">GitHub</a></p>
-<pre><code><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages("devtools")
-devtools::install_github("poissonconsulting/err")
-devtools::install_github("poissonconsulting/checkr")
-devtools::install_github("poissonconsulting/tinter")</a></code></pre>
-<p>To install the latest development version from the Poisson drat <a href="https://github.com/poissonconsulting/drat">repository</a></p>
-<pre><code><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages("drat")
-drat::addRepo("poissonconsulting")
-install.packages("tinter")</a></code></pre>
+<p>To install the latest release from <a href="https://cran.r-project.org">CRAN</a></p>
+<div class="sourceCode" id="cb11"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinter"</span>)</pre></div>
+<p>To install the developmental version from <a href="https://github.com/poissonconsulting/tinter">GitHub</a></p>
+<div class="sourceCode" id="cb12"><pre class="r"><span class="co"># install.packages("remotes")</span>
+<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"poissonconsulting/tinter"</span>)</pre></div>
+<p>To install the latest developmental release from the Poisson drat <a href="https://github.com/poissonconsulting/drat">repository</a></p>
+<div class="sourceCode" id="cb13"><pre class="r"><span class="co"># install.packages("drat")</span>
+<span class="kw pkg">drat</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/drat/man/addRepo.html">addRepo</a></span>(<span class="st">"poissonconsulting"</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinter"</span>)</pre></div>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">
@@ -173,13 +174,13 @@ install.packages("tinter")</a></code></pre>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
 <li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=tinter">https://​cloud.r-project.org/​package=tinter</a>
 </li>
-<li>Browse source code at <br><a href="https://github.com/poissonconsulting/tinter">https://​github.com/​poissonconsulting/​tinter</a>
+<li>Browse source code at <br><a href="https://github.com/poissonconsulting/tinter/">https://​github.com/​poissonconsulting/​tinter/​</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/poissonconsulting/tinter/issues">https://​github.com/​poissonconsulting/​tinter/​issues</a>
 </li>
@@ -192,6 +193,12 @@ install.packages("tinter")</a></code></pre>
 <li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+<div class="community">
+<h2>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
@@ -200,8 +207,18 @@ install.packages("tinter")</a></code></pre>
 </ul>
 </div>
 
-      </div>
-
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
+<li><a href="https://travis-ci.org/poissonconsulting/tinter"><img src="https://travis-ci.org/poissonconsulting/tinter.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://ci.appveyor.com/project/sebdalgarno/tinter"><img src="https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
+<li><a href="https://codecov.io/github/poissonconsulting/tinter?branch=master"><img src="https://codecov.io/gh/poissonconsulting/tinter/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
+<li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
+<li><a href="https://cran.r-project.org/package=tinter"><img src="https://www.r-pkg.org/badges/version/tinter" alt="CRAN status"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -210,12 +227,14 @@ install.packages("tinter")</a></code></pre>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

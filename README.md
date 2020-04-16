@@ -77,7 +77,7 @@ library(sf)
 nc <- st_read(system.file(package = "sf", "shape/nc.shp"))
 
 ggplot(data = nc) +
-  geom_sf(aes(fill = AREA), colour = "white", lwd = 0.05) +
+  geom_sf(aes(fill = AREA), colour = "white", lwd = 0.04) +
   # colours from tinter
   scale_fill_gradientn(colours = tinter(hex)) +
   theme_void() +

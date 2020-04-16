@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • tinter</title>
+<title>Validate Color String — vld_color • tinter</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,9 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Validate Color String — vld_color" />
+<meta property="og:description" content="Validates whether x is a string (non-missing character vector of length 1)
+that specifies a color." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -66,7 +68,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -118,35 +120,55 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/poissonconsulting/tinter/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Validate Color String</h1>
+    <small class="dont-index">Source: <a href='https://github.com/poissonconsulting/tinter/blob/master/R/vld.R'><code>R/vld.R</code></a></small>
+    <div class="hidden name"><code>vld_color.Rd</code></div>
     </div>
 
-    <div id="tinter-0-0-1" class="section level1">
-<h1 class="page-header" data-toc-text="0.0.1">
-<a href="#tinter-0-0-1" class="anchor"></a>tinter 0.0.1<small> 2018-12-16 </small>
-</h1>
-<ul>
-<li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
-</ul>
-</div>
-    <div id="tinter-0-1-0" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0">
-<a href="#tinter-0-1-0" class="anchor"></a>tinter 0.1.0<small> Unreleased </small>
-</h1>
-<ul>
-<li>Added exported functions <code>chk_color</code>/<code>chk_colour</code> and <code>vld_color</code>/<code>vld_colour</code>.</li>
-<li>Resolved issue in r devel build caused by testing condition on vector of length two.</li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>Validates whether x is a string (non-missing character vector of length 1)
+that specifies a color.</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>vld_color</span>(<span class='no'>x</span>)
+
+<span class='fu'>vld_colour</span>(<span class='no'>x</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>The object to check.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A flag indicating whether the object was validated.</p>
+    <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
+
+    
+<ul>
+<li><p><code>vld_color</code>: Validate Color String</p></li>
+<li><p><code>vld_colour</code>: Validate Colour String</p></li>
+</ul>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='chk_color.html'>chk_color()</a></code></p></div>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='co'># vld_color</span>
+<span class='fu'>vld_color</span>(<span class='st'>"blue"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_color</span>(<span class='st'>"glue"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'>
+<span class='co'># vld_color</span>
+<span class='fu'>vld_colour</span>(<span class='st'>"blue"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'>vld_colour</span>(<span class='st'>"glue"</span>)</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 

@@ -4,6 +4,5 @@
 
 # tinter 0.1.0
 
-* Added exported functions chk_color/chk_colour and vld_color/vld_colour.
-* Resolved issue of 'class(matrix(...)) gives a vector of length two and conditions of length
-greater than one in 'if' or 'while' give an error'.
+* Added exported functions `chk_color`/`chk_colour` and `vld_color`/`vld_colour`.
+* Resolved issue in r devel build caused by testing condition on vector of length two.

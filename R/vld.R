@@ -5,7 +5,7 @@
 #'
 #' @inheritParams chk::chk_true
 #' @return A flag indicating whether the object was validated.
-#' @seealso \code{\link{chk_color}()}
+#' @seealso [chk_color()]
 #' @name vld_color
 NULL
 

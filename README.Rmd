@@ -36,7 +36,6 @@ knitr::opts_chunk$set(
 ```{r global}
 library(tinter)
 hex <- "#335CAC"
-
 ```
 
 ```{r colour, echo = FALSE, fig.width = 2, fig.height = 0.5}
@@ -81,7 +80,6 @@ tinter(hex, direction = "tints")
 
 ```{r tints, echo=FALSE}
 tinter_plot(tinter(hex, direction = "tints"))
-
 ```
 
 ```{r, results="hide"}
@@ -117,7 +115,7 @@ library(sf)
 nc <- st_read(system.file(package = "sf", "shape/nc.shp"))
 
 ggplot(data = nc) +
-  geom_sf(aes(fill = AREA), colour = "white", lwd = 0.05) +
+  geom_sf(aes(fill = AREA), colour = "white", lwd = 0.04) +
   # colours from tinter
   scale_fill_gradientn(colours = tinter(hex)) +
   theme_void() +

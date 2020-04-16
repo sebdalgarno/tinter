@@ -37,5 +37,5 @@ vld_colour("blue")
 vld_colour("glue")
 }
 \seealso{
-\code{\link{chk_color}()}
+\code{\link[=chk_color]{chk_color()}}
 }
