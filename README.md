@@ -34,7 +34,7 @@ library(tinter)
 hex <- "#335CAC"
 ```
 
-![](tools/README-colour-1.png)<!-- -->
+![](man/figures/README-colour-1.png)<!-- -->
 
 ``` r
 tinter(hex)
@@ -42,31 +42,31 @@ tinter(hex)
 #> [8] "#142444" "#0A1222"
 ```
 
-![](tools/README-tinter-1.png)<!-- -->
+![](man/figures/README-tinter-1.png)<!-- -->
 
 ``` r
 tinter(hex, direction = "tints")
 ```
 
-![](tools/README-tints-1.png)<!-- -->
+![](man/figures/README-tints-1.png)<!-- -->
 
 ``` r
 tinter(hex, steps = 10)
 ```
 
-![](tools/README-steps-1.png)<!-- -->
+![](man/figures/README-steps-1.png)<!-- -->
 
 ``` r
 tinter(hex, steps = 10, crop = 7)
 ```
 
-![](tools/README-crop-1.png)<!-- -->
+![](man/figures/README-crop-1.png)<!-- -->
 
 ``` r
 tinter(hex, steps = 10, crop = 7, adjust = 0.4)
 ```
 
-![](tools/README-darken-1.png)<!-- -->
+![](man/figures/README-darken-1.png)<!-- -->
 
 ### Create a choropleth map
 
@@ -84,7 +84,7 @@ ggplot(data = nc) +
   coord_sf(datum = NA)
 ```
 
-![](tools/README-plot-1.png)<!-- -->
+![](man/figures/README-plot-1.png)<!-- -->
 
 ### Doesn’t this already exist?
 

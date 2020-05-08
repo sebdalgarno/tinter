@@ -86,26 +86,26 @@
 <a href="#introduction" class="anchor"></a>Introduction</h3>
 <p><code>tinter</code> provides a simple way to generate monochromatic palettes. Easily define:</p>
 <ul>
-<li>palette direction (âshadesâ, âtintsâ, or âbothâ).</li>
+<li>palette direction (“shades”, “tints”, or “both”).</li>
 <li>number of colours to generate on either side (<code>steps</code>).</li>
-<li>number of colours to remove from extreme end(s) of palette (e.g.Â default <code>crop = 1</code> eliminates black and white).</li>
+<li>number of colours to remove from extreme end(s) of palette (e.g. default <code>crop = 1</code> eliminates black and white).</li>
 <li>darker or lighter output (<code>adjust</code>).</li>
 </ul>
 <!-- end list --><div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tinter</span>)
 <span class="no">hex</span> <span class="kw">&lt;-</span> <span class="st">"#335CAC"</span></pre></div>
-<p><img src="tools/README-colour-1.png"><!-- --></p>
+<p><img src="reference/figures/README-colour-1.png"><!-- --></p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>)
 <span class="co">#&gt; [1] "#D6DEEE" "#ADBDDD" "#849DCD" "#5B7CBC" "#335CAC" "#284989" "#1E3767"</span>
 <span class="co">#&gt; [8] "#142444" "#0A1222"</span></pre></div>
-<p><img src="tools/README-tinter-1.png"><!-- --></p>
+<p><img src="reference/figures/README-tinter-1.png"><!-- --></p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">direction</span> <span class="kw">=</span> <span class="st">"tints"</span>)</pre></div>
-<p><img src="tools/README-tints-1.png"><!-- --></p>
+<p><img src="reference/figures/README-tints-1.png"><!-- --></p>
 <div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">steps</span> <span class="kw">=</span> <span class="fl">10</span>)</pre></div>
-<p><img src="tools/README-steps-1.png"><!-- --></p>
+<p><img src="reference/figures/README-steps-1.png"><!-- --></p>
 <div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">steps</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">crop</span> <span class="kw">=</span> <span class="fl">7</span>)</pre></div>
-<p><img src="tools/README-crop-1.png"><!-- --></p>
+<p><img src="reference/figures/README-crop-1.png"><!-- --></p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">steps</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">crop</span> <span class="kw">=</span> <span class="fl">7</span>, <span class="kw">adjust</span> <span class="kw">=</span> <span class="fl">0.4</span>)</pre></div>
-<p><img src="tools/README-darken-1.png"><!-- --></p>
+<p><img src="reference/figures/README-darken-1.png"><!-- --></p>
 </div>
 <div id="create-a-choropleth-map" class="section level3">
 <h3 class="hasAnchor">
@@ -116,17 +116,17 @@
 <span class="no">nc</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/sf/man/st_read.html">st_read</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="kw">package</span> <span class="kw">=</span> <span class="st">"sf"</span>, <span class="st">"shape/nc.shp"</span>))
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">nc</span>) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">fill</span> <span class="kw">=</span> <span class="no">AREA</span>), <span class="kw">colour</span> <span class="kw">=</span> <span class="st">"white"</span>, <span class="kw">lwd</span> <span class="kw">=</span> <span class="fl">0.05</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">geom_sf</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">fill</span> <span class="kw">=</span> <span class="no">AREA</span>), <span class="kw">colour</span> <span class="kw">=</span> <span class="st">"white"</span>, <span class="kw">lwd</span> <span class="kw">=</span> <span class="fl">0.04</span>) +
   <span class="co"># colours from tinter</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_fill_gradientn</a></span>(<span class="kw">colours</span> <span class="kw">=</span> <span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>)) +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_void</a></span>() +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html">coord_sf</a></span>(<span class="kw">datum</span> <span class="kw">=</span> <span class="fl">NA</span>)</pre></div>
-<p><img src="tools/README-plot-1.png"><!-- --></p>
+<p><img src="reference/figures/README-plot-1.png"><!-- --></p>
 </div>
 <div id="doesnt-this-already-exist" class="section level3">
 <h3 class="hasAnchor">
-<a href="#doesnt-this-already-exist" class="anchor"></a>Doesnât this already exist?</h3>
-<p><code>tinter</code> just simplifies a task usually done with <code>grDevices</code>. Itâs default is to remove black and white from the palette.</p>
+<a href="#doesnt-this-already-exist" class="anchor"></a>Doesn’t this already exist?</h3>
+<p><code>tinter</code> just simplifies a task usually done with <code>grDevices</code>. It’s default is to remove black and white from the palette.</p>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>)
 <span class="co">#&gt; [1] "#CCCCFF" "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099"</span>
 <span class="co">#&gt; [8] "#000065" "#000032"</span>
@@ -169,7 +169,7 @@
 <a href="#contribution" class="anchor"></a>Contribution</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/tinter/issues">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/tinter/pulls">Pull requests</a> are always welcome.</p>
-<p>Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+<p>Please note that this project is released with a <a href="https://github.com/poissonconsulting/tinter/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
@@ -227,7 +227,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
