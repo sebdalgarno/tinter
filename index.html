@@ -91,79 +91,105 @@
 <li>number of colours to remove from extreme end(s) of palette (e.g. default <code>crop = 1</code> eliminates black and white).</li>
 <li>darker or lighter output (<code>adjust</code>).</li>
 </ul>
-<!-- end list --><div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tinter</span>)
+<!-- end list --><div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/poissonconsulting/tinter">tinter</a></span>)
 <span class="co">#&gt; Warning: package 'tinter' was built under R version 3.6.3</span>
-<span class="no">hex</span> <span class="kw">&lt;-</span> <span class="st">"#335CAC"</span></pre></div>
+<span class="kw">hex</span> <span class="op">&lt;-</span> <span class="st">"#335CAC"</span>
+</pre></div>
 <p><img src="reference/figures/README-colour-1.png"><!-- --></p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="kw">hex</span>)
 <span class="co">#&gt; [1] "#D6DEEE" "#ADBDDD" "#849DCD" "#5B7CBC" "#335CAC" "#284989" "#1E3767"</span>
-<span class="co">#&gt; [8] "#142444" "#0A1222"</span></pre></div>
+<span class="co">#&gt; [8] "#142444" "#0A1222"</span>
+</pre></div>
 <p><img src="reference/figures/README-tinter-1.png"><!-- --></p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">direction</span> <span class="kw">=</span> <span class="st">"tints"</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="kw">hex</span>, direction = <span class="st">"tints"</span>)
+</pre></div>
 <p><img src="reference/figures/README-tints-1.png"><!-- --></p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">steps</span> <span class="kw">=</span> <span class="fl">10</span>)</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="kw">hex</span>, steps = <span class="fl">10</span>)
+</pre></div>
 <p><img src="reference/figures/README-steps-1.png"><!-- --></p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">steps</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">crop</span> <span class="kw">=</span> <span class="fl">7</span>)</pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="kw">hex</span>, steps = <span class="fl">10</span>, crop = <span class="fl">7</span>)
+</pre></div>
 <p><img src="reference/figures/README-crop-1.png"><!-- --></p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>, <span class="kw">steps</span> <span class="kw">=</span> <span class="fl">10</span>, <span class="kw">crop</span> <span class="kw">=</span> <span class="fl">7</span>, <span class="kw">adjust</span> <span class="kw">=</span> <span class="fl">0.4</span>)</pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="kw">hex</span>, steps = <span class="fl">10</span>, crop = <span class="fl">7</span>, adjust = <span class="fl">0.4</span>)
+</pre></div>
 <p><img src="reference/figures/README-darken-1.png"><!-- --></p>
 </div>
 <div id="create-a-choropleth-map" class="section level3">
 <h3 class="hasAnchor">
 <a href="#create-a-choropleth-map" class="anchor"></a>Create a choropleth map</h3>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">sf</span>)
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">ggplot2</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw">sf</span>)
 
-<span class="no">nc</span> <span class="kw">&lt;-</span> <span class="fu">st_read</span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="kw">package</span> <span class="kw">=</span> <span class="st">"sf"</span>, <span class="st">"shape/nc.shp"</span>))
+<span class="kw">nc</span> <span class="op">&lt;-</span> <span class="fu">st_read</span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(package = <span class="st">"sf"</span>, <span class="st">"shape/nc.shp"</span>))
 
-<span class="fu">ggplot</span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">nc</span>) +
-  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="kw">fill</span> <span class="kw">=</span> <span class="no">AREA</span>), <span class="kw">colour</span> <span class="kw">=</span> <span class="st">"white"</span>, <span class="kw">lwd</span> <span class="kw">=</span> <span class="fl">0.04</span>) +
+<span class="fu">ggplot</span>(data = <span class="kw">nc</span>) <span class="op">+</span>
+  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(fill = <span class="kw">AREA</span>), colour = <span class="st">"white"</span>, lwd = <span class="fl">0.04</span>) <span class="op">+</span>
   <span class="co"># colours from tinter</span>
-  <span class="fu">scale_fill_gradientn</span>(<span class="kw">colours</span> <span class="kw">=</span> <span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="no">hex</span>)) +
-  <span class="fu">theme_void</span>() +
-  <span class="fu">coord_sf</span>(<span class="kw">datum</span> <span class="kw">=</span> <span class="fl">NA</span>)</pre></div>
+  <span class="fu">scale_fill_gradientn</span>(colours = <span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="kw">hex</span>)) <span class="op">+</span>
+  <span class="fu">theme_void</span>() <span class="op">+</span>
+  <span class="fu">coord_sf</span>(datum = <span class="fl">NA</span>)
+</pre></div>
 <p><img src="reference/figures/README-plot-1.png"><!-- --></p>
 </div>
 <div id="doesnt-this-already-exist" class="section level3">
 <h3 class="hasAnchor">
 <a href="#doesnt-this-already-exist" class="anchor"></a>Doesn’t this already exist?</h3>
 <p><code>tinter</code> just simplifies a task usually done with <code>grDevices</code>. It’s default is to remove black and white from the palette.</p>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>)
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>)
 <span class="co">#&gt; [1] "#CCCCFF" "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099"</span>
 <span class="co">#&gt; [8] "#000065" "#000032"</span>
 
 <span class="co">### ------ is identical to</span>
 
-<span class="kw pkg">grDevices</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span>(<span class="kw">colors</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="fl">11</span>)[-(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">11</span>))]
+<span class="kw">grDevices</span>::<span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span>(colors = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="fl">11</span>)[<span class="op">-</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">11</span>))]
 <span class="co">#&gt; [1] "#CCCCFF" "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098"</span>
-<span class="co">#&gt; [8] "#000065" "#000032"</span></pre></div>
-<div class="sourceCode" id="cb9"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, <span class="kw">direction</span> <span class="kw">=</span> <span class="st">"shades"</span>)
+<span class="co">#&gt; [8] "#000065" "#000032"</span>
+</pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit">
+<span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, direction = <span class="st">"shades"</span>)
 <span class="co">#&gt; [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"</span>
 
 <span class="co">### --- is identical to</span>
 
-<span class="kw pkg">grDevices</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span>(<span class="kw">colors</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="fl">6</span>)[-<span class="fl">6</span>]
-<span class="co">#&gt; [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"</span></pre></div>
-<div class="sourceCode" id="cb10"><pre class="r"><span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, <span class="kw">crop</span> <span class="kw">=</span> <span class="fl">2</span>)
+<span class="kw">grDevices</span>::<span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span>(colors = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="fl">6</span>)[<span class="op">-</span><span class="fl">6</span>]
+<span class="co">#&gt; [1] "#0000FF" "#0000CC" "#000099" "#000065" "#000032"</span>
+</pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit">
+<span class="fu"><a href="reference/tinter.html">tinter</a></span>(<span class="st">"blue"</span>, crop = <span class="fl">2</span>)
 <span class="co">#&gt; [1] "#9999FF" "#6666FF" "#3333FF" "#0000FF" "#0000CC" "#000099" "#000065"</span>
 
 <span class="co">### --- is identical to</span>
 
-<span class="kw pkg">grDevices</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span>(<span class="kw">colors</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="fl">11</span>)[-(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>:<span class="fl">2</span>, <span class="fl">10</span>:<span class="fl">11</span>))]
-<span class="co">#&gt; [1] "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098" "#000065"</span></pre></div>
+<span class="kw">grDevices</span>::<span class="fu"><a href="https://rdrr.io/r/grDevices/colorRamp.html">colorRampPalette</a></span>(colors = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"white"</span>, <span class="st">"blue"</span>, <span class="st">"black"</span>))(<span class="fl">11</span>)[<span class="op">-</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span><span class="op">:</span><span class="fl">2</span>, <span class="fl">10</span><span class="op">:</span><span class="fl">11</span>))]
+<span class="co">#&gt; [1] "#9999FF" "#6565FF" "#3232FF" "#0000FF" "#0000CB" "#000098" "#000065"</span>
+</pre></div>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install the latest release from <a href="https://cran.r-project.org">CRAN</a></p>
-<div class="sourceCode" id="cb11"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinter"</span>)</pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinter"</span>)
+</pre></div>
 <p>To install the developmental version from <a href="https://github.com/poissonconsulting/tinter">GitHub</a></p>
-<div class="sourceCode" id="cb12"><pre class="r"><span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"poissonconsulting/tinter"</span>)</pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit">
+<span class="co"># install.packages("remotes")</span>
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"poissonconsulting/tinter"</span>)
+</pre></div>
 <p>To install the latest developmental release from the Poisson drat <a href="https://github.com/poissonconsulting/drat">repository</a></p>
-<div class="sourceCode" id="cb13"><pre class="r"><span class="co"># install.packages("drat")</span>
-<span class="kw pkg">drat</span><span class="kw ns">::</span><span class="fu">addRepo</span>(<span class="st">"poissonconsulting"</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinter"</span>)</pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit">
+<span class="co"># install.packages("drat")</span>
+<span class="kw">drat</span>::<span class="fu">addRepo</span>(<span class="st">"poissonconsulting"</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"tinter"</span>)
+</pre></div>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">
