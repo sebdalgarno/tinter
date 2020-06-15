@@ -4,10 +4,8 @@
 # tinter <img src="https://raw.githubusercontent.com/poissonconsulting/tinter/master/docs/logo.png"  align="right" width='15%'/>
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis build
-status](https://travis-ci.org/poissonconsulting/tinter.svg?branch=master)](https://travis-ci.org/poissonconsulting/tinter)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/sebdalgarno/tinter?branch=master&svg=true)](https://ci.appveyor.com/project/sebdalgarno/tinter)
+[![R build
+status](https://github.com/poissonconsulting/tinter/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/tinter/actions)
 [![Coverage
 status](https://codecov.io/gh/poissonconsulting/tinter/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/tinter?branch=master)
 [![License:
@@ -31,6 +29,7 @@ Easily define:
 
 ``` r
 library(tinter)
+#> Warning: package 'tinter' was built under R version 3.6.3
 hex <- "#335CAC"
 ```
 
@@ -156,6 +155,7 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/tinter/pulls) are
 always welcome.
 
-Please note that this project is released with a [Contributor Code of
-Conduct](https://github.com/poissonconsulting/tinter/blob/master/CODE_OF_CONDUCT.md).
-By participating in this project you agree to abide by its terms.
+Please note that the tinter project is released with a [Contributor Code
+of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
