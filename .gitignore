@@ -3,5 +3,12 @@
 .RData
 .Ruserdata
 
-*.DS_Store
+.DS_Store
+.Renviron
+.RProfile
+.httr-oauth
 
+*.html
+
+docs/
+inst/docs/
