@@ -1,3 +1,8 @@
+# tinter 0.1.0.9000
+
+- Added chk_color(), chk_colour(), vld_color() and vld_colour().
+
+
 # tinter 0.0.1
 
 * Added a `NEWS.md` file to track changes to the package.
