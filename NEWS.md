@@ -1,7 +1,10 @@
+# tinter 0.1.0.9001
+
+- Same as previous version.
+
 # tinter 0.1.0.9000
 
-- Added chk_color(), chk_colour(), vld_color() and vld_colour().
-
+- Same as previous version.
 
 # tinter 0.0.1
 
