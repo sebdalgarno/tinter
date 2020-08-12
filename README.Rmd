@@ -13,9 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-
-# tinter <img src="https://raw.githubusercontent.com/poissonconsulting/tinter/master/docs/logo.png"  align="right" width='15%'/>
-
+# tinter <img src="man/figures/logo.png" align="right" width='20%'/>
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![R build status](https://github.com/poissonconsulting/tinter/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/tinter/actions)
@@ -160,13 +158,6 @@ To install the developmental version from [GitHub](https://github.com/poissoncon
 ```{r, eval=FALSE}
 # install.packages("remotes")
 remotes::install_github("poissonconsulting/tinter")
-```
-
-To install the latest developmental release from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
-```{r, eval=FALSE}
-# install.packages("drat")
-drat::addRepo("poissonconsulting")
-install.packages("tinter")
 ```
 
 ## Contribution

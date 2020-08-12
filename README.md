@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# tinter <img src="https://raw.githubusercontent.com/poissonconsulting/tinter/master/docs/logo.png"  align="right" width='15%'/>
+# tinter <img src="man/figures/logo.png" align="right" width='20%'/>
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![R build
@@ -29,7 +29,6 @@ Easily define:
 
 ``` r
 library(tinter)
-#> Warning: package 'tinter' was built under R version 3.6.3
 hex <- "#335CAC"
 ```
 
@@ -136,15 +135,6 @@ To install the developmental version from
 ``` r
 # install.packages("remotes")
 remotes::install_github("poissonconsulting/tinter")
-```
-
-To install the latest developmental release from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-``` r
-# install.packages("drat")
-drat::addRepo("poissonconsulting")
-install.packages("tinter")
 ```
 
 ## Contribution
